@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="es" class="gl" data-fase="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Doble AA Tattoo — Aaròn Manrique · Realismo en Mallorca</title>
+<meta name="description" content="Doble AA Tattoo: Aaròn Manrique, tatuador argentino en Mallorca. Realismo en negro y gris y fine line. Pide tu cita.">
+<link rel="canonical" href="https://dobleaa.ink/">
+<meta property="og:url" content="https://dobleaa.ink/">
+<meta property="og:title" content="Doble AA Tattoo — Realismo en Mallorca">
+<meta property="og:description" content="Arte sacro, mitología, retratos y animales en negro y gris. Citas disponibles.">
+<meta property="og:image" content="https://dobleaa.ink/img/ultima-cena.jpg">
+<meta name="theme-color" content="#0b0b0b">
+<!-- DEMO DOBLE AA TATTOO (2026-10-22) — Human Glitche · para @dobleaatattoo (Aaròn Manrique, Mallorca).
+     Versión SOBRIA (pedido del owner): negro, serif (Cormorant Garamond + EB Garamond), su firma en gótica
+     y un mosaico de seis trabajos en la portada. La versión ácida con el fondo UMBRAL quedó en acido.html.
+     Fotos: captura ZETA LENS de su perfil, sin regradear. ES/EN para el turista de Mallorca. Sin precios ni
+     políticas inventadas. Solo contacto (decisión del owner, 22/10): WhatsApp de Aaròn +34 662 569 821 e Instagram. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/ultima-cena.jpg" fetchpriority="high">
+<script>
+document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs.com'].includes(location.hostname));
+</script>
+<style>
+  :root{
+    --bg:#0b0b0b; --panel:#111110; --ink:#ece7df; --ink2:#cbc5bb; --mute:#8b857c;
+    --line:rgba(236,231,223,.13); --line2:rgba(236,231,223,.3);
+    --d:'Cormorant Garamond',Georgia,serif; --b:'EB Garamond',Georgia,serif; --g:'Grenze Gotisch',serif;
+    --gut:clamp(18px,4vw,64px);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  [hidden]{display:none!important}
+  html{background:var(--bg);-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
+  body{background:var(--bg);color:var(--ink);font:400 18px/1.6 var(--b);overflow-x:clip;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  button,input,select,textarea{font:inherit;color:inherit}
+  button{background:none;border:0;cursor:pointer}
+  ::selection{background:var(--ink);color:var(--bg)}
+  :focus-visible{outline:1px solid var(--ink);outline-offset:3px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .wrap{max-width:1320px;margin-inline:auto;padding-inline:var(--gut)}
+  .mono{font-family:var(--b);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
+  .goth{font-family:var(--g);font-weight:700}
+  .cromo{display:inline}
+  .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor}
+  @keyframes late{50%{opacity:.25}}
+
+  /* ── botones: rectos, finos, sin sombra ── */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 28px;
+    font:500 12px/1 var(--b);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;cursor:pointer;
+    border:1px solid var(--line2);background:transparent;transition:background-color .25s,color .25s,border-color .25s}
+  .btn-acid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .btn-acid:hover{background:transparent;color:var(--ink)}
+  .btn-line:hover{border-color:var(--ink)}
+  .btn-s{min-height:38px;padding:0 16px;font-size:11px}
+  .lnk{font:italic 400 18px/1.4 var(--d);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:2px;transition:border-color .2s}
+  .lnk:hover{border-color:var(--ink)}
+
+  /* ── barra ── */
+  .top{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:16px var(--gut);border-bottom:1px solid transparent;transition:background-color .3s,border-color .3s}
+  .top.solida{background:rgba(11,11,11,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
+  .marca{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap}
+  .marca .goth{font-size:26px;line-height:1}
+  .marca small{font:500 10px/1 var(--b);letter-spacing:.32em;text-transform:uppercase;color:var(--mute)}
+  .nav{display:flex;gap:30px}
+  .nav a{font:500 11.5px/1 var(--b);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:var(--mute);transition:color .2s}
+  .nav a:hover{color:var(--ink)}
+  .top-der{display:flex;align-items:center;gap:12px}
+  .lang{font:500 11px/1 var(--b);letter-spacing:.18em;border:1px solid var(--line);min-width:44px;min-height:38px;padding:0 10px;transition:border-color .2s}
+  .lang:hover{border-color:var(--ink)}
+  @media(max-width:980px){.nav{display:none}}
+
+  /* ── portada: el nombre arriba, su obra abajo ── */
+  .hero{padding-top:clamp(90px,12vh,124px)}
+  .hero-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px 64px;align-items:end;padding-bottom:clamp(22px,3.4vh,40px)}
+  .kicker{grid-column:1/-1;color:var(--mute)}
+  .tag{font:300 clamp(50px,6.6vw,108px)/.9 var(--d);letter-spacing:-.02em}
+  .tag .cromo:last-child{font-style:italic}
+  .hero-pie{display:grid;gap:22px;justify-items:start;padding-bottom:8px}
+  .hero-p{font-size:clamp(17px,1.35vw,20px);color:var(--ink2);max-width:40ch}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .disp{display:inline-flex;align-items:center;gap:10px;color:var(--ink2)}
+  .disp .dot{animation:late 2.4s ease-in-out infinite}
+  .mosaico{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.25fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:6px;
+    height:clamp(360px,calc(100svh - 350px),720px);padding:0 6px}
+  .m{position:relative;overflow:hidden;background:#151514;cursor:zoom-in;display:block;width:100%;height:100%}
+  .m img{width:100%;height:100%;object-fit:cover;animation:aparece 1.6s cubic-bezier(.2,.7,.2,1) both;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+  @keyframes aparece{from{opacity:0;transform:scale(1.06)}}
+  .m:hover img{transform:scale(1.03)}
+  .m1{grid-column:1;grid-row:1/3}.m2{grid-column:2;grid-row:1}.m3{grid-column:2;grid-row:2}
+  .m4{grid-column:3;grid-row:1}.m6{grid-column:3;grid-row:2}.m5{grid-column:4;grid-row:1/3}
+  .m2 img{animation-delay:.12s}.m3 img{animation-delay:.24s}.m4 img{animation-delay:.18s}.m6 img{animation-delay:.3s}.m5 img{animation-delay:.36s}
+  .m figcaption{position:absolute;left:14px;bottom:12px;font:italic 400 17px/1.2 var(--d);text-align:left;opacity:0;transition:opacity .35s;text-shadow:0 1px 12px rgba(0,0,0,.85)}
+  .m:hover figcaption,.m:focus-visible figcaption{opacity:1}
+
+  /* ── secciones ── */
+  .sec{position:relative;padding:clamp(90px,12vw,170px) 0;border-top:1px solid var(--line)}
+  .num{display:flex;align-items:center;gap:14px;color:var(--mute);margin-bottom:26px}
+  .num::after{content:"";height:1px;width:48px;background:var(--line2)}
+  .h2{font:300 clamp(42px,5.6vw,86px)/.98 var(--d);letter-spacing:-.015em;overflow-wrap:break-word}
+  .h2 .cromo:last-child{font-style:italic}
+  .mll .h2,.cita .h2{font-size:clamp(40px,4.4vw,68px)}
+  .lead{color:var(--ink2);max-width:46ch;margin-top:22px;font-size:clamp(17px,1.3vw,19.5px)}
+  .panel{background:var(--panel);border:1px solid var(--line)}
+  .etq{font:500 11px/1 var(--b);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+  .rv{opacity:0;translate:0 22px;transition:opacity 1.1s ease,translate 1.1s cubic-bezier(.16,1,.3,1)}
+  .rv.in{opacity:1;translate:0 0}
+
+  /* 01 · estudio */
+  .est{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(40px,6vw,100px);align-items:center}
+  .frase{font:300 clamp(32px,3.4vw,54px)/1.1 var(--d)}
+  .frase em{font-style:italic}
+  .frase-cite{display:block;margin-top:18px;color:var(--mute);font-style:normal}
+  .datos{list-style:none;display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:34px}
+  .datos li{display:flex;align-items:center;gap:10px;font:500 11.5px/1 var(--b);letter-spacing:.2em;text-transform:uppercase;color:var(--ink2)}
+  .datos b{font-weight:400;font-size:15px}
+  .est-fotos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:start}
+  .pola{margin:0}
+  .pola img{width:100%;aspect-ratio:9/16;object-fit:cover}
+  .pola figcaption{margin-top:10px;font:italic 400 17px/1.2 var(--d);color:var(--mute)}
+  .p2{margin-top:64px}
+
+  /* 02 · trabajos */
+  .cab{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 60px;flex-wrap:wrap}
+  .cab .lead{max-width:36ch}
+  .chips{display:flex;flex-wrap:wrap;gap:4px 24px;margin-top:42px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .chip{display:inline-flex;align-items:baseline;gap:6px;min-height:42px;font:400 21px/1 var(--d);color:var(--mute);transition:color .2s}
+  .chip sup{font:500 10px/1 var(--b);letter-spacing:.08em}
+  .chip:hover{color:var(--ink)}
+  .chip[aria-pressed="true"]{color:var(--ink);font-style:italic}
+  .grilla{columns:4 240px;column-gap:8px;margin-top:28px}
+  .pieza{position:relative;display:block;width:100%;margin-bottom:8px;break-inside:avoid;overflow:hidden;background:#141413;animation:entra .6s ease both}
+  @keyframes entra{from{opacity:0}}
+  .pieza img{width:100%;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+  .pieza figcaption{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:44px 14px 12px;text-align:left;
+    background:linear-gradient(transparent,rgba(0,0,0,.78));font:italic 400 18px/1.2 var(--d);opacity:0;transition:opacity .35s}
+  @media(hover:hover){.pieza:hover img{transform:scale(1.03)}.pieza:hover figcaption{opacity:1}}
+  .mas{display:inline-block;margin-top:32px}
+
+  /* 03 · proceso */
+  .pasos{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;border-top:1px solid var(--line)}
+  .paso.panel{background:none;border:0;padding:32px 28px 8px 0}
+  .paso+.paso{padding-left:28px;border-left:1px solid var(--line)}
+  .paso-n{display:block;font:italic 300 56px/1 var(--d);color:var(--mute);margin-bottom:22px}
+  .paso h3{font:400 27px/1.1 var(--d);margin-bottom:12px}
+  .paso p{color:var(--ink2);font-size:16.5px}
+  @media(max-width:1000px){.pasos{grid-template-columns:repeat(2,minmax(0,1fr))}.paso:nth-child(3){padding-left:0;border-left:0}}
+
+  /* 04 · mallorca */
+  .mll{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,90px);align-items:start}
+  .tablero{margin-top:40px;border-top:1px solid var(--line2)}
+  .fila{display:grid;grid-template-columns:64px 26px minmax(0,1fr) auto;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .cod{font:500 13px/1 var(--b);letter-spacing:.24em;color:var(--mute)}
+  .lug{font:400 24px/1.15 var(--d)}
+  .est-m{color:var(--mute);font-size:11px}
+  .fila.base .lug{font-style:italic}
+  .fila.base .est-m{color:var(--ink);display:inline-flex;align-items:center;gap:8px}
+  .mll-der{display:grid;gap:18px}
+  .atardecer{margin:0}
+  .atardecer img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 45%}
+  .atardecer figcaption{margin-top:10px;color:var(--mute)}
+  .tips{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+  @media(max-width:1180px){.tips{grid-template-columns:minmax(0,1fr)}}
+  .tip{padding:26px 24px}
+  .tip h3{font:400 25px/1.15 var(--d);margin-bottom:10px}
+  .tip p{color:var(--ink2);font-size:16.5px;margin-bottom:14px}
+
+  /* 05 · cita */
+  .cita{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,5vw,90px);align-items:start}
+  .faq{margin-top:42px;border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font:400 23px/1.25 var(--d)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--mute);font:300 28px/.8 var(--d);transition:rotate .25s}
+  .faq details[open] summary::after{rotate:45deg}
+  .faq details p{padding:0 0 22px;color:var(--ink2);max-width:56ch;font-size:16.5px}
+  .armador{padding:clamp(22px,3vw,40px);display:grid;gap:26px}
+  .armador fieldset{border:0;display:grid;gap:10px}
+  .armador legend,.campo>span{font:500 11px/1 var(--b);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px}
+  .pills input{position:absolute;opacity:0;pointer-events:none}
+  .pills label{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--line);font:400 18px/1.2 var(--d);cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+  .pills label:hover{border-color:var(--line2)}
+  .pills input:checked+label{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+  .pills input:focus-visible+label{outline:1px solid var(--ink);outline-offset:2px}
+  .dos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+  .campo{display:grid}
+  .campo input,.campo select,.campo textarea{width:100%;min-height:48px;padding:12px 0;background:transparent;border:0;border-bottom:1px solid var(--line2);
+    border-radius:0;font:400 17px/1.4 var(--b);transition:border-color .2s}
+  .campo select{appearance:none;padding-right:28px;background-repeat:no-repeat;background-size:6px 6px;
+    background-image:linear-gradient(45deg,transparent 50%,var(--ink2) 50%),linear-gradient(135deg,var(--ink2) 50%,transparent 50%);
+    background-position:calc(100% - 12px) 22px,calc(100% - 6px) 22px}
+  .campo select option{background:#111;color:var(--ink)}
+  .campo textarea{resize:vertical;min-height:84px}
+  .campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--ink)}
+  .sub{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:6px}
+  .ref-chip{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line2);padding:6px;max-width:100%}
+  .ref-chip img{width:40px;height:52px;object-fit:cover}
+  .ref-chip b{font:italic 400 19px/1.2 var(--d)}
+  .ref-chip button{width:36px;height:36px;color:var(--mute);font-size:16px}
+  .ref-chip button:hover{color:var(--ink)}
+  .ref-vacia{color:var(--mute);font-style:italic;font-size:16.5px}
+  .previa pre{white-space:pre-wrap;word-break:break-word;font:400 15.5px/1.6 var(--b);color:var(--ink2);background:rgba(255,255,255,.025);
+    border-left:1px solid var(--line2);padding:14px 18px;max-height:260px;overflow:auto}
+  .acciones{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px}
+  .nota{min-height:16px;color:var(--ink2)}
+  /* la foto del diseño y el permiso para guardar los datos (051) */
+  .foto-elegir{position:relative;display:flex;align-items:center;gap:14px;min-height:58px;padding:8px 16px 8px 8px;border:1px dashed var(--line2);
+    cursor:pointer;font:italic 400 19px/1.2 var(--d);transition:border-color .2s}
+  .foto-elegir:hover,.foto-elegir:focus-within{border-color:var(--ink)}
+  .foto-elegir input{position:absolute;inset:0;width:100%;opacity:0;cursor:pointer}
+  .foto-elegir img{width:44px;height:58px;object-fit:cover}
+  .foto-hint{display:block;margin-top:8px;color:var(--mute);font-size:14.5px}
+  .ok-datos{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:var(--ink2);cursor:pointer}
+  .ok-datos input{flex:none;width:18px;height:18px;margin-top:3px;accent-color:var(--ink)}
+
+  /* final */
+  .final{border-top:1px solid var(--line)}
+  .final-cta{display:grid;justify-items:center;gap:28px;text-align:center;padding:clamp(90px,12vw,160px) var(--gut)}
+  .final-cta .h2{font-size:clamp(42px,5vw,78px)}
+  .pie{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:20px 40px;padding-top:34px;padding-bottom:44px;border-top:1px solid var(--line)}
+  .pie-marca .goth{font-size:46px;line-height:.9}
+  .pie p{color:var(--mute);line-height:1.9}
+  .redes{display:flex;gap:24px}
+  .redes a{text-decoration:none;transition:color .2s}
+  .redes a:hover{color:var(--mute)}
+  .demo-nota{display:none}
+  html.muestra .demo-nota{display:block}
+
+  /* CTA fija en celular */
+  .fijo{position:fixed;z-index:46;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:none;align-items:center;justify-content:space-between;
+    min-height:54px;padding:0 22px;background:var(--ink);color:var(--bg);font:500 12px/1 var(--b);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+    translate:0 140%;transition:translate .35s cubic-bezier(.2,.8,.2,1)}
+  .fijo.ver{translate:0 0}
+  @media(max-width:860px){.fijo{display:flex}}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:80;background:rgba(8,8,8,.97);display:grid;grid-template-rows:auto 1fr;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+  .lb.abierta{opacity:1;visibility:visible;transition:opacity .3s}
+  .lb-bar{display:flex;justify-content:space-between;align-items:center;padding:14px var(--gut)}
+  .lb-x{width:46px;height:46px;font-size:18px;border:1px solid var(--line)}
+  .lb-x:hover{border-color:var(--ink)}
+  .lb-fig{display:grid;grid-template-rows:1fr auto;justify-items:center;gap:18px;padding:0 var(--gut) 22px;min-height:0}
+  .lb-fig img{max-width:100%;max-height:calc(100svh - 190px);width:auto;height:auto;object-fit:contain;align-self:center}
+  .lb-fig figcaption{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 28px}
+  .lb-t{font:italic 300 clamp(26px,2.6vw,36px)/1.1 var(--d)}
+  .lb-nav{position:absolute;top:50%;width:52px;height:52px;translate:0 -50%;font-size:20px;background:rgba(11,11,11,.6);border:1px solid var(--line)}
+  .lb-nav:hover{border-color:var(--ink)}
+  .lb-prev{left:12px}.lb-next{right:12px}
+
+  @media(max-width:860px){
+    .hero-in,.est,.mll,.cita{grid-template-columns:minmax(0,1fr)}
+    .mosaico{display:flex;height:auto;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gut) 4px;scrollbar-width:none}
+    .mosaico::-webkit-scrollbar{display:none}
+    .m{flex:0 0 74%;aspect-ratio:3/4;scroll-snap-align:center}
+    .m figcaption{opacity:1}
+    .pie{grid-template-columns:minmax(0,1fr);align-items:start;padding-bottom:96px}
+  }
+  @media(max-width:620px){
+    .grilla{columns:2;column-gap:6px}
+    .pieza{margin-bottom:6px}
+    .pasos{grid-template-columns:minmax(0,1fr)}
+    .paso.panel,.paso+.paso{padding:26px 0 8px;border-left:0}
+    .paso+.paso{border-top:1px solid var(--line)}
+    .tips,.dos,.sub{grid-template-columns:minmax(0,1fr)}
+    .p2{margin-top:40px}
+    .lb-nav{top:auto;bottom:88px;translate:none;width:46px;height:46px}
+    .lb-fig img{max-height:calc(100svh - 250px)}
+    .marca .goth{font-size:23px}
+    .marca small{display:none}
+    .kicker{font-size:10.5px;letter-spacing:.12em}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .dot,.pieza,.m img{animation:none!important}
+    .rv{opacity:1;translate:none;transition:none}
+  }
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <a class="marca" href="#inicio" aria-label="Doble AA Tattoo"><span class="goth">Doble AA</span><small>Tattoo</small></a>
+  <nav class="nav" aria-label="Secciones">
+    <a href="#trabajos" data-i18n="nav.trabajos">Trabajos</a>
+    <a href="#estudio" data-i18n="nav.estudio">Estudio</a>
+    <a href="#mallorca">Mallorca</a>
+  </nav>
+  <div class="top-der">
+    <button class="lang" id="lang" type="button" data-i18n-aria="lang.aria" aria-label="Switch to English">EN</button>
+    <a class="btn btn-acid btn-s" href="#cita" data-i18n="nav.cita">Pedir cita</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio" data-fase="0" data-velo="0">
+  <h1 class="sr" data-i18n="h1">Doble AA Tattoo — Aaròn Manrique, tatuador de realismo en Mallorca</h1>
+  <div class="hero-in wrap">
+    <p class="kicker mono" data-i18n="hero.kicker">Aaròn Manrique — tatuador · de 🇦🇷 a 🇪🇸</p>
+    <p class="tag cl" data-i18n="hero.tag">Realismo<br>negro y gris</p>
+    <div class="hero-pie">
+      <p class="hero-p" data-i18n="hero.p">Arte sacro, mitología, retratos y animales. Piezas grandes, hechas sin prisa, en Mallorca.</p>
+      <div class="ctas">
+        <a class="btn btn-acid" href="#cita" data-i18n="hero.cta">Pedir cita →</a>
+        <a class="btn btn-line" href="#trabajos" data-i18n="hero.ver">Ver trabajos</a>
+      </div>
+      <span class="disp mono"><i class="dot"></i><span data-i18n="hero.sticker">Citas disponibles</span></span>
+    </div>
+  </div>
+  <div class="mosaico" id="mosaico">
+    <button type="button" class="m m1" data-f="ultima-cena"><img src="img/ultima-cena.jpg" width="1500" height="2000" alt="" fetchpriority="high"><figcaption></figcaption></button>
+    <button type="button" class="m m2" data-f="angel-manga"><img src="img/angel-manga-t.jpg" width="1200" height="1600" alt=""><figcaption></figcaption></button>
+    <button type="button" class="m m3" data-f="dios-calavera"><img src="img/dios-calavera-t.jpg" width="1200" height="1600" alt=""><figcaption></figcaption></button>
+    <button type="button" class="m m4" data-f="virgen"><img src="img/virgen.jpg" width="720" height="1280" alt=""><figcaption></figcaption></button>
+    <button type="button" class="m m6" data-f="tigre-elefante"><img src="img/tigre-elefante-t.jpg" width="1200" height="1600" alt=""><figcaption></figcaption></button>
+    <button type="button" class="m m5" data-f="pegaso"><img src="img/pegaso.jpg" width="901" height="1600" alt=""><figcaption></figcaption></button>
+  </div>
+</section>
+
+<section class="sec" id="estudio" data-fase="0.3" data-velo="0.4">
+  <div class="wrap est">
+    <div>
+      <p class="num mono" data-i18n="est.num">01 — El estudio</p>
+      <blockquote class="rv">
+        <p class="frase" data-i18n="est.q">Lo hecho a mano lleva tiempo, <em>y el tiempo es un lujo.</em></p>
+        <cite class="frase-cite mono" data-i18n="est.cite">— Aaròn, en sus reels</cite>
+      </blockquote>
+      <p class="lead rv" data-i18n="est.p">Cada pieza parte de tu idea y se diseña para la zona donde va. Un estudio tranquilo en Mallorca, sin prisas y con tiempo para cada tatuaje.</p>
+      <ul class="datos rv">
+        <li><b>🇦🇷</b><span data-i18n="est.d1">Desde Argentina</span></li>
+        <li><b>🇪🇸</b><span data-i18n="est.d2">Residente en Mallorca</span></li>
+        <li><b>✦</b><span data-i18n="est.d3">Realismo · Fine line</span></li>
+      </ul>
+    </div>
+    <div class="est-fotos">
+      <figure class="pola p1 rv" data-par="0.05"><img src="img/estudio-mano.jpg" width="640" height="1136" alt="Aaròn tatuando en el estudio" loading="lazy" decoding="async"><figcaption data-i18n="est.f1">En el estudio</figcaption></figure>
+      <figure class="pola p2 rv" data-par="0.12"><img src="img/estudio-camilla.jpg" width="640" height="1136" alt="La camilla del estudio, con luz natural" loading="lazy" decoding="async"><figcaption data-i18n="est.f2">La camilla</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="trabajos" data-fase="1" data-velo="0.62">
+  <div class="wrap">
+    <div class="cab">
+      <div>
+        <p class="num mono" data-i18n="tr.num">02 — Trabajos</p>
+        <h2 class="h2 cl" data-i18n="tr.h">Lo que ya<br>está en la piel</h2>
+      </div>
+      <p class="lead" data-i18n="tr.p">Una selección de su Instagram. Toca una foto para verla grande y pedir algo así.</p>
+    </div>
+    <div class="chips" id="chips" role="toolbar" data-i18n-aria="tr.aria" aria-label="Filtrar trabajos"></div>
+    <div class="grilla" id="grilla"></div>
+    <a class="lnk mas" href="https://www.instagram.com/dobleaatattoo/" target="_blank" rel="noopener" data-i18n="tr.mas">Más en @dobleaatattoo ↗</a>
+  </div>
+</section>
+
+<section class="sec" id="proceso" data-fase="1.15" data-velo="0.45">
+  <div class="wrap">
+    <p class="num mono" data-i18n="pr.num">03 — Cómo se hace</p>
+    <h2 class="h2 cl" data-i18n="pr.h">Sin prisa,<br>paso a paso</h2>
+    <ol class="pasos">
+      <li class="paso panel rv"><span class="paso-n">01</span><h3 data-i18n="pr.1t">Tu idea</h3><p data-i18n="pr.1p"></p></li>
+      <li class="paso panel rv"><span class="paso-n">02</span><h3 data-i18n="pr.2t">El diseño</h3><p data-i18n="pr.2p"></p></li>
+      <li class="paso panel rv"><span class="paso-n">03</span><h3 data-i18n="pr.3t">Las sesiones</h3><p data-i18n="pr.3p"></p></li>
+      <li class="paso panel rv"><span class="paso-n">04</span><h3 data-i18n="pr.4t">El curado</h3><p data-i18n="pr.4p"></p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="mallorca" data-fase="1.45" data-velo="0.3">
+  <div class="wrap mll">
+    <div>
+      <p class="num mono">04 — Mallorca</p>
+      <h2 class="h2 cl" data-i18n="ml.h">De Argentina<br>al Mediterráneo</h2>
+      <p class="lead" data-i18n="ml.p"></p>
+      <div class="tablero" id="tablero" role="list">
+        <div class="fila" role="listitem"><span class="cod">ARG</span><span>🇦🇷</span><span class="lug">Argentina</span><span class="est-m mono" data-i18n="ml.origen">Origen</span></div>
+        <div class="fila" role="listitem"><span class="cod">MAD</span><span>🇪🇸</span><span class="lug">Madrid</span><span class="est-m mono" data-i18n="ml.dest">Destacada</span></div>
+        <div class="fila" role="listitem"><span class="cod">LON</span><span>🇬🇧</span><span class="lug" data-i18n="ml.lon">Londres</span><span class="est-m mono" data-i18n="ml.dest">Destacada</span></div>
+        <div class="fila" role="listitem"><span class="cod">FRA</span><span>🇫🇷</span><span class="lug" data-i18n="ml.fra">Francia</span><span class="est-m mono" data-i18n="ml.dest">Destacada</span></div>
+        <div class="fila" role="listitem"><span class="cod">EGY</span><span>🇪🇬</span><span class="lug" data-i18n="ml.egy">Egipto</span><span class="est-m mono" data-i18n="ml.dest">Destacada</span></div>
+        <div class="fila base" role="listitem"><span class="cod">PMI</span><span>📍</span><span class="lug">Mallorca</span><span class="est-m mono"><i class="dot"></i><span data-i18n="ml.base">Base</span></span></div>
+      </div>
+    </div>
+    <div class="mll-der">
+      <figure class="atardecer rv"><img src="img/mallorca-atardecer.jpg" width="1500" height="2000" alt="Atardecer naranja sobre el mar con un velero" loading="lazy" decoding="async"><figcaption class="mono" data-i18n="ml.foto">De su Instagram</figcaption></figure>
+      <div class="tips">
+        <article class="tip panel rv"><h3 data-i18n="ml.t1">¿Vienes de vacaciones?</h3><p data-i18n="ml.t1p"></p><a class="lnk" href="#cita" data-donde="visita" data-i18n="ml.t1a">Avisar mis fechas →</a></article>
+        <article class="tip panel rv"><h3 data-i18n="ml.t2">¿Estás en otra ciudad?</h3><p data-i18n="ml.t2p"></p><a class="lnk" href="#cita" data-donde="otra" data-i18n="ml.t2a">Dejar mi ciudad →</a></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="cita" data-fase="1.7" data-velo="0.66">
+  <div class="wrap cita">
+    <div>
+      <p class="num mono" data-i18n="ci.num">05 — Cita</p>
+      <h2 class="h2 cl" data-i18n="ci.h">Pide<br>tu cita</h2>
+      <p class="lead" data-i18n="ci.p"></p>
+      <div class="faq">
+        <details><summary data-i18n="faq.1q">¿Cuánto cuesta?</summary><p data-i18n="faq.1a"></p></details>
+        <details><summary data-i18n="faq.2q">¿Cuánto tarda una pieza grande?</summary><p data-i18n="faq.2a"></p></details>
+        <details><summary data-i18n="faq.3q">¿Y si estoy de vacaciones?</summary><p data-i18n="faq.3a"></p></details>
+      </div>
+    </div>
+    <form class="armador panel" id="armador" novalidate>
+      <fieldset>
+        <legend data-i18n="ci.estilo">Estilo</legend>
+        <div class="pills">
+          <input type="radio" name="estilo" id="e-realismo" value="realismo"><label for="e-realismo" data-i18n="op.realismo">Realismo negro y gris</label>
+          <input type="radio" name="estilo" id="e-fine" value="fine"><label for="e-fine" data-i18n="op.fine">Fine line</label>
+          <input type="radio" name="estilo" id="e-nose" value="nose"><label for="e-nose" data-i18n="op.nose">Aún no lo sé</label>
+        </div>
+      </fieldset>
+      <div class="dos">
+        <label class="campo"><span data-i18n="ci.zona">Zona</span>
+          <select name="zona">
+            <option value="" data-i18n="ci.elegir">Elige…</option>
+            <option value="antebrazo" data-i18n="z.antebrazo">Antebrazo</option>
+            <option value="brazo" data-i18n="z.brazo">Brazo</option>
+            <option value="hombro" data-i18n="z.hombro">Hombro</option>
+            <option value="manga" data-i18n="z.manga">Manga completa</option>
+            <option value="pierna" data-i18n="z.pierna">Pierna</option>
+            <option value="gemelo" data-i18n="z.gemelo">Gemelo</option>
+            <option value="pecho" data-i18n="z.pecho">Pecho</option>
+            <option value="espalda" data-i18n="z.espalda">Espalda</option>
+            <option value="otra" data-i18n="z.otra">Otra zona</option>
+          </select>
+        </label>
+        <label class="campo"><span data-i18n="ci.tam">Tamaño</span>
+          <select name="tam">
+            <option value="" data-i18n="ci.elegir">Elige…</option>
+            <option value="peq" data-i18n="t.peq">Pequeño (≈ palma)</option>
+            <option value="med" data-i18n="t.med">Mediano (≈ antebrazo)</option>
+            <option value="gra" data-i18n="t.gra">Grande (media manga o más)</option>
+            <option value="pro" data-i18n="t.pro">Proyecto (manga, pecho, espalda)</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <p class="etq" data-i18n="ci.ref">Referencia</p>
+        <div id="ref"></div>
+      </div>
+      <label class="campo"><span data-i18n="ci.idea">Tu idea</span><textarea name="idea" rows="3" data-i18n-ph="ci.ideaph"></textarea></label>
+      <fieldset>
+        <legend data-i18n="ci.donde">¿Dónde estás?</legend>
+        <div class="pills">
+          <input type="radio" name="donde" id="d-vivo" value="vivo"><label for="d-vivo" data-i18n="op.vivo">Vivo en Mallorca</label>
+          <input type="radio" name="donde" id="d-visita" value="visita"><label for="d-visita" data-i18n="op.visita">De visita en Mallorca</label>
+          <input type="radio" name="donde" id="d-otra" value="otra"><label for="d-otra" data-i18n="op.otra">En otra ciudad</label>
+        </div>
+        <div class="sub" id="sub-visita" hidden>
+          <label class="campo"><span data-i18n="ci.llego">Llego</span><input type="date" name="d1"></label>
+          <label class="campo"><span data-i18n="ci.mevoy">Me voy</span><input type="date" name="d2"></label>
+        </div>
+        <div class="sub" id="sub-otra" hidden>
+          <label class="campo"><span data-i18n="ci.ciudad">Ciudad</span><input name="ciudad" autocomplete="address-level2"></label>
+        </div>
+      </fieldset>
+      <label class="campo"><span data-i18n="ci.nombre">Tu nombre</span><input name="nombre" autocomplete="name" maxlength="120"></label>
+      <div class="dos">
+        <label class="campo"><span data-i18n="ci.tel">Tu teléfono</span><input name="telefono" type="tel" autocomplete="tel" maxlength="25" data-i18n-ph="ci.telph"></label>
+        <label class="campo"><span data-i18n="ci.mail">Tu mail</span><input name="email" type="email" autocomplete="email" maxlength="200" data-i18n-ph="ci.mailph"></label>
+      </div>
+      <div class="campo">
+        <span data-i18n="ci.foto">Foto del diseño o de tu referencia</span>
+        <label class="foto-elegir"><input type="file" name="foto" accept="image/*"><img id="foto-prev" alt="" hidden><span id="foto-txt">Elegir foto</span></label>
+        <small class="foto-hint" data-i18n="ci.fotohint">Se achica sola y le llega a Aaròn con tu mensaje.</small>
+      </div>
+      <label class="ok-datos"><input type="checkbox" name="acepto"><span data-i18n="ci.acepto">Acepto que Aaròn guarde mi nombre, teléfono, mail y la foto para contestarme y hacerme la factura.</span></label>
+      <div class="previa">
+        <p class="etq" data-i18n="ci.previa">Tu mensaje</p>
+        <pre id="previa"></pre>
+      </div>
+      <div class="acciones">
+        <button type="button" class="btn btn-acid" id="b-wa" hidden data-i18n="ci.wa">Enviar por WhatsApp</button>
+        <button type="button" class="btn btn-line" id="b-ig" data-i18n="ci.ig">Por Instagram</button>
+        <button type="button" class="lnk" id="b-copiar" data-i18n="ci.copiar">Solo copiar</button>
+      </div>
+      <p class="nota mono" id="nota" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="final" id="final" data-fase="2" data-velo="0">
+  <div class="final-cta">
+    <p class="h2 cl" data-i18n="fi.h">Te espera<br>en Mallorca</p>
+    <a class="btn btn-acid" href="#cita" data-i18n="hero.cta">Pedir cita →</a>
+  </div>
+  <div class="wrap pie">
+    <div class="pie-marca"><span class="goth cromo">Doble AA</span></div>
+    <p class="mono">Aaròn Manrique · Mallorca, España<br><span data-i18n="fi.fotos">Fotos y trabajos © Aaròn Manrique</span><span class="demo-nota">Demo · Human Glitche</span></p>
+    <nav class="redes mono" aria-label="Redes">
+      <a href="https://wa.me/34662569821" target="_blank" rel="noopener">WhatsApp ↗</a>
+      <a href="https://www.instagram.com/dobleaatattoo/" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="https://www.tiktok.com/@dobleaatattoo1" target="_blank" rel="noopener">TikTok ↗</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="fijo" id="fijo" href="#cita"><span data-i18n="nav.cita">Pedir cita</span><b aria-hidden="true">→</b></a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lb-t">
+  <div class="lb-bar"><span class="mono" id="lb-n"></span><button class="lb-x" id="lb-x" type="button" data-i18n-aria="lb.cerrar" aria-label="Cerrar">✕</button></div>
+  <figure class="lb-fig">
+    <img id="lb-img" alt="">
+    <figcaption><span class="lb-t" id="lb-t"></span><button class="btn btn-acid" id="lb-quiero" type="button" data-i18n="lb.quiero">Quiero algo así →</button></figcaption>
+  </figure>
+  <button class="lb-nav lb-prev" id="lb-prev" type="button" data-i18n-aria="lb.prev" aria-label="Anterior">←</button>
+  <button class="lb-nav lb-next" id="lb-next" type="button" data-i18n-aria="lb.next" aria-label="Siguiente">→</button>
+</div>
+
+<script>
+(()=>{'use strict';
+/* ── Config: lo único que hay que tocar cuando Aaròn pase sus datos ── */
+const CFG = {
+  instagram: 'dobleaatattoo',
+  whatsapp: '34662569821',  // +34 662 569 821, el de Aaròn
+  // Las consultas (nombre, teléfono, mail, foto) quedan en su panel de negocio
+  // para facturar; solo se guardan desde su dominio, no desde la vitrina.
+  api: 'https://api.hg-vl.com',
+  marca: 'doblea'
+};
+
+/* f = archivo en img/ (más -t = miniatura) · w×h = tamaño real · tags = filtros */
+const FOTOS = [
+  {f:'ultima-cena',     w:1500,h:2000, es:'La Última Cena',        en:'The Last Supper',        tags:['sacro']},
+  {f:'angel-manga',     w:1200,h:1600, es:'Ángel, manga completa', en:'Angel, full sleeve',     tags:['sacro','mangas']},
+  {f:'pastor-aleman',   w:1200,h:1600, es:'Pastor alemán',         en:'German shepherd',        tags:['animales']},
+  {f:'dios-calavera',   w:1200,h:1600, es:'Dios griego y calavera',en:'Greek god and skull',    tags:['mito']},
+  {f:'cristo-oracion',  w:1200,h:1600, es:'Cristo en oración',     en:'Christ in prayer',       tags:['sacro']},
+  {f:'pegaso',          w:901, h:1600, es:'Pegaso',                en:'Pegasus',                tags:['mito']},
+  {f:'retrato-espada',  w:1200,h:1600, es:'Retrato y espada',      en:'Portrait and sword',     tags:['retrato']},
+  {f:'medusa',          w:901, h:1600, es:'Medusa y templo',       en:'Medusa and temple',      tags:['mito']},
+  {f:'rosa-ornamental', w:1200,h:1600, es:'Rosa y ornamental',     en:'Rose and ornamental',    tags:['fine']},
+  {f:'tigre-elefante',  w:1200,h:1600, es:'Tigre y elefante',      en:'Tiger and elephant',     tags:['animales','mangas']},
+  {f:'virgen',          w:720, h:1280, es:'Virgen',                en:'Madonna',                tags:['sacro']},
+  {f:'egipto',          w:1397,h:1600, es:'Egipto',                en:'Egypt',                  tags:['mito']},
+  {f:'rostro-mascara',  w:902, h:1600, es:'Rostro y máscara',      en:'Face and mask',          tags:['retrato']},
+  {f:'justicia',        w:720, h:1280, es:'Justicia',              en:'Justice',                tags:['mito','retrato']},
+  {f:'mascara-hannya',  w:1200,h:1600, es:'Máscara hannya',        en:'Hannya mask',            tags:['mito']},
+  {f:'escena-sacra',    w:1200,h:1600, es:'Escena sacra',          en:'Sacred scene',           tags:['sacro']},
+  {f:'perro-fineline',  w:1200,h:1600, es:'Retrato de mascota',    en:'Pet portrait',           tags:['fine','animales']},
+  {f:'guerrera',        w:720, h:1280, es:'Guerrera',              en:'Warrior',                tags:['mito']},
+  {f:'manga-completa',  w:640, h:1136, es:'Manga completa',        en:'Full sleeve',            tags:['mangas']},
+  {f:'silencio',        w:640, h:1136, es:'Silencio',              en:'Silence',                tags:['retrato']},
+  {f:'dios-detalle',    w:720, h:1280, es:'Dios griego, detalle',  en:'Greek god, detail',      tags:['mito']},
+  {f:'ornamental-13',   w:901, h:1600, es:'Ornamental',            en:'Ornamental',             tags:[]},
+  {f:'manos-rosario',   w:720, h:1280, es:'Manos y rosario',       en:'Hands and rosary',       tags:['sacro']},
+  {f:'diosa',           w:640, h:1136, es:'Diosa',                 en:'Goddess',                tags:['mito','retrato']},
+  {f:'angelito',        w:640, h:1136, es:'Angelito',              en:'Cherub',                 tags:['sacro']},
+  {f:'dios-griego',     w:640, h:1136, es:'Dios griego',           en:'Greek god',              tags:['mito']},
+  {f:'manga-animales',  w:640, h:1136, es:'Manga completa, brazo', en:'Full sleeve, arm',       tags:['mangas']}
+];
+const FILTROS=['todo','sacro','mito','retrato','animales','mangas','fine'];
+
+const T={
+es:{
+ 'nav.trabajos':'Trabajos','nav.estudio':'Estudio','nav.cita':'Pedir cita','lang.aria':'Switch to English',
+ 'h1':'Doble AA Tattoo — Aaròn Manrique, tatuador de realismo en Mallorca',
+ 'hero.sticker':'Citas disponibles','hero.kicker':'Aaròn Manrique — tatuador · de 🇦🇷 a 🇪🇸',
+ 'hero.tag':'Realismo<br>negro y gris','hero.p':'Arte sacro, mitología, retratos y animales. Piezas grandes, hechas sin prisa, en Mallorca.',
+ 'hero.cta':'Pedir cita →','hero.ver':'Ver trabajos',
+ 'cinta1':'Realismo ✦ Fine line ✦ Mallorca ✦ Citas disponibles ✦','cinta2':'Doble AA Tattoo ✦ Negro y gris ✦ @dobleaatattoo ✦',
+ 'est.num':'01 — El estudio','est.q':'Lo hecho a mano lleva tiempo, <em>y el tiempo es un lujo.</em>','est.cite':'— Aaròn, en sus reels',
+ 'est.p':'Cada pieza parte de tu idea y se diseña para la zona donde va. Un estudio tranquilo en Mallorca, sin prisas y con tiempo para cada tatuaje.',
+ 'est.d1':'Desde Argentina','est.d2':'Residente en Mallorca','est.d3':'Realismo · Fine line','est.f1':'En el estudio','est.f2':'La camilla',
+ 'tr.num':'02 — Trabajos','tr.h':'Lo que ya<br>está en la piel','tr.p':'Una selección de su Instagram. Toca una foto para verla grande y pedir algo así.',
+ 'tr.aria':'Filtrar trabajos','tr.mas':'Más en @dobleaatattoo ↗',
+ 'f.todo':'Todo','f.sacro':'Sacro','f.mito':'Mitología','f.retrato':'Retrato','f.animales':'Animales','f.mangas':'Mangas','f.fine':'Fine line',
+ 'pr.num':'03 — Cómo se hace','pr.h':'Sin prisa,<br>paso a paso',
+ 'pr.1t':'Tu idea','pr.1p':'Le cuentas qué quieres, dónde y de qué tamaño. Si tienes fotos de referencia, mejor.',
+ 'pr.2t':'El diseño','pr.2p':'Se arma a partir de tus referencias, pensado para la zona que elegiste.',
+ 'pr.3t':'Las sesiones','pr.3p':'Las piezas grandes de realismo suelen llevar varias sesiones. El presupuesto te lo pasa por mensaje.',
+ 'pr.4t':'El curado','pr.4p':'Te pasa los cuidados para que cure bien. Así quedan curados: destacada «Curado» en su Instagram.',
+ 'ml.h':'De Argentina<br>al Mediterráneo','ml.p':'Aaròn vive y tatúa en Mallorca. Sus historias destacadas pasan por Madrid, Londres, Francia, Egipto y Argentina.',
+ 'ml.origen':'Origen','ml.dest':'Destacada','ml.base':'Base','ml.lon':'Londres','ml.fra':'Francia','ml.egy':'Egipto','ml.foto':'De su Instagram',
+ 'ml.t1':'¿Vienes de vacaciones?','ml.t1p':'Escribe antes de llegar para guardar fecha. Un consejo: mientras cura conviene evitar el sol fuerte, el mar y la piscina, así que mejor tatuarse al final del viaje.','ml.t1a':'Avisar mis fechas →',
+ 'ml.t2':'¿Estás en otra ciudad?','ml.t2p':'Déjale tu ciudad en el mensaje y te avisa si pasa por allí.','ml.t2a':'Dejar mi ciudad →',
+ 'ci.num':'05 — Cita','ci.h':'Pide<br>tu cita','ci.p':'Arma tu mensaje en un minuto y mándaselo por WhatsApp. Las fotos de referencia se las pasas en el mismo chat.',
+ 'faq.1q':'¿Cuánto cuesta?','faq.1a':'Depende del tamaño, la zona y las horas. Escríbele con tu idea y te pasa presupuesto.',
+ 'faq.2q':'¿Cuánto tarda una pieza grande?','faq.2a':'Un brazo o un pecho de realismo suele hacerse en varias sesiones. Lo hablan al armar el diseño.',
+ 'faq.3q':'¿Y si estoy de vacaciones?','faq.3a':'Se puede. Escribe con tiempo y, si puedes, deja el tatuaje para el final del viaje: mientras cura, nada de sol fuerte, mar ni piscina.',
+ 'ci.estilo':'Estilo','op.realismo':'Realismo negro y gris','op.fine':'Fine line','op.nose':'Aún no lo sé',
+ 'ci.zona':'Zona','ci.tam':'Tamaño','ci.elegir':'Elige…',
+ 'z.antebrazo':'Antebrazo','z.brazo':'Brazo','z.hombro':'Hombro','z.manga':'Manga completa','z.pierna':'Pierna','z.gemelo':'Gemelo','z.pecho':'Pecho','z.espalda':'Espalda','z.otra':'Otra zona',
+ 't.peq':'Pequeño (≈ palma)','t.med':'Mediano (≈ antebrazo)','t.gra':'Grande (media manga o más)','t.pro':'Proyecto (manga, pecho, espalda)',
+ 'ci.ref':'Referencia','ci.refvacia':'Elige una foto en Trabajos y toca «Quiero algo así».','ci.refquitar':'Quitar referencia',
+ 'ci.idea':'Tu idea','ci.ideaph':'Ej.: un león con una rosa en el antebrazo, en negro y gris…',
+ 'ci.donde':'¿Dónde estás?','op.vivo':'Vivo en Mallorca','op.visita':'De visita en Mallorca','op.otra':'En otra ciudad',
+ 'ci.llego':'Llego','ci.mevoy':'Me voy','ci.ciudad':'Ciudad','ci.nombre':'Tu nombre','ci.previa':'Tu mensaje',
+ 'ci.tel':'Tu teléfono','ci.telph':'+34 600 000 000','ci.mail':'Tu mail','ci.mailph':'tu@mail.com',
+ 'ci.foto':'Foto del diseño o de tu referencia','ci.fotoel':'Elegir foto','ci.fotocambiar':'Cambiar la foto',
+ 'ci.fotohint':'Se achica sola y le llega a Aaròn con tu mensaje.',
+ 'ci.acepto':'Acepto que Aaròn guarde mi nombre, teléfono, mail y la foto para contestarme y hacerme la factura.',
+ 'ci.faltanombre':'Pon tu nombre.','ci.faltatel':'Pon tu teléfono, con el prefijo del país si no es de España.',
+ 'ci.faltamail':'Pon un mail válido: es para la factura.','ci.faltaok':'Marca la casilla para que Aaròn pueda guardar tus datos.',
+ 'ci.guardando':'Guardando tu consulta…','ci.enviado':'Listo: tu consulta {c} quedó guardada y se abrió WhatsApp.',
+ 'ci.adjunta':'Se abrió WhatsApp: adjunta la foto en el chat.','ci.abierto':'Se abrió WhatsApp con tu mensaje.',
+ 'ci.wa':'Enviar por WhatsApp','ci.ig':'Por Instagram','ci.copiar':'Solo copiar','ci.copiado':'Copiado ✓ Pégalo en el chat de Instagram.','ci.copiado2':'Copiado ✓','ci.nocopia':'No se pudo copiar: selecciona el texto y cópialo a mano.',
+ 'fi.h':'Te espera<br>en Mallorca','fi.fotos':'Fotos y trabajos © Aaròn Manrique',
+ 'lb.quiero':'Quiero algo así →','lb.cerrar':'Cerrar','lb.prev':'Anterior','lb.next':'Siguiente',
+ 'fase0':'01 · La firma','fase1':'02 · El resplandor','fase2':'03 · El portal','hud':'Mueve el ratón: la tinta te esquiva · Clic: onda',
+ 'm.hola':'¡Hola Aaròn! Soy {n}. Quiero pedir cita 🖤','m.hola0':'¡Hola Aaròn! Quiero pedir cita 🖤','m.estilo':'Estilo','m.zona':'Zona','m.tam':'Tamaño',
+ 'm.ref':'Referencia: algo como «{r}» de tu web','m.idea':'Idea','m.vivo':'Vivo en Mallorca','m.visita':'Estoy de visita en Mallorca{f}',
+ 'm.fechas':' del {a} al {b}','m.desde':' desde el {a}','m.otra':'Estoy en {c}: avísame si pasas por aquí','m.otra0':'Estoy en otra ciudad: avísame si pasas por aquí',
+ 'm.fin':'Te paso fotos de referencia por aquí.',
+ 'm.mail':'Mail','m.foto':'Foto del diseño: {u}','m.fotoprev':'Foto del diseño: va adjunta','m.fotoadj':'Te paso la foto del diseño por aquí.'
+},
+en:{
+ 'nav.trabajos':'Work','nav.estudio':'Studio','nav.cita':'Book now','lang.aria':'Cambiar a español',
+ 'h1':'Doble AA Tattoo — Aaròn Manrique, realism tattoo artist in Mallorca',
+ 'hero.sticker':'Booking open','hero.kicker':'Aaròn Manrique — tattoo artist · from 🇦🇷 to 🇪🇸',
+ 'hero.tag':'Black & grey<br>realism','hero.p':'Sacred art, mythology, portraits and animals. Big pieces, made without rushing, in Mallorca.',
+ 'hero.cta':'Book a session →','hero.ver':'See the work',
+ 'cinta1':'Realism ✦ Fine line ✦ Mallorca ✦ Booking open ✦','cinta2':'Doble AA Tattoo ✦ Black & grey ✦ @dobleaatattoo ✦',
+ 'est.num':'01 — The studio','est.q':'What’s made by hand takes time, <em>and time is a luxury.</em>','est.cite':'— Aaròn, on his reels',
+ 'est.p':'Every piece starts from your idea and is designed for the spot where it goes. A calm studio in Mallorca, unhurried, with time for every tattoo.',
+ 'est.d1':'From Argentina','est.d2':'Based in Mallorca','est.d3':'Realism · Fine line','est.f1':'In the studio','est.f2':'The table',
+ 'tr.num':'02 — Work','tr.h':'Already<br>on skin','tr.p':'A selection from his Instagram. Tap a photo to see it big and ask for something similar.',
+ 'tr.aria':'Filter work','tr.mas':'More on @dobleaatattoo ↗',
+ 'f.todo':'All','f.sacro':'Sacred','f.mito':'Mythology','f.retrato':'Portrait','f.animales':'Animals','f.mangas':'Sleeves','f.fine':'Fine line',
+ 'pr.num':'03 — How it works','pr.h':'Unhurried,<br>step by step',
+ 'pr.1t':'Your idea','pr.1p':'Tell him what you want, where and how big. Reference photos help.',
+ 'pr.2t':'The design','pr.2p':'It’s built from your references, made for the spot you chose.',
+ 'pr.3t':'The sessions','pr.3p':'Large realism pieces usually take several sessions. He sends the quote by message.',
+ 'pr.4t':'Healing','pr.4p':'He gives you aftercare so it heals right. See healed work in the «Curado» highlight on his Instagram.',
+ 'ml.h':'From Argentina<br>to the Med','ml.p':'Aaròn lives and tattoos in Mallorca. His story highlights go through Madrid, London, France, Egypt and Argentina.',
+ 'ml.origen':'Origin','ml.dest':'Highlight','ml.base':'Home','ml.lon':'London','ml.fra':'France','ml.egy':'Egypt','ml.foto':'From his Instagram',
+ 'ml.t1':'Visiting on holiday?','ml.t1p':'Message before you arrive to hold a date. Tip: while it heals you should avoid strong sun, the sea and pools, so it’s best to get tattooed at the end of your trip.','ml.t1a':'Send my dates →',
+ 'ml.t2':'In another city?','ml.t2p':'Leave your city in the message and he’ll let you know if he comes by.','ml.t2a':'Leave my city →',
+ 'ci.num':'05 — Booking','ci.h':'Book<br>your session','ci.p':'Build your message in a minute and send it on WhatsApp. Share your reference photos in the same chat.',
+ 'faq.1q':'How much is it?','faq.1a':'It depends on size, placement and hours. Send him your idea and he’ll quote you.',
+ 'faq.2q':'How long does a big piece take?','faq.2a':'A realism sleeve or chest piece usually takes several sessions. You’ll plan it together with the design.',
+ 'faq.3q':'What if I’m on holiday?','faq.3a':'Sure. Message ahead and, if you can, leave the tattoo for the end of your trip: while it heals, no strong sun, sea or pool.',
+ 'ci.estilo':'Style','op.realismo':'Black & grey realism','op.fine':'Fine line','op.nose':'Not sure yet',
+ 'ci.zona':'Placement','ci.tam':'Size','ci.elegir':'Choose…',
+ 'z.antebrazo':'Forearm','z.brazo':'Upper arm','z.hombro':'Shoulder','z.manga':'Full sleeve','z.pierna':'Leg','z.gemelo':'Calf','z.pecho':'Chest','z.espalda':'Back','z.otra':'Somewhere else',
+ 't.peq':'Small (≈ palm)','t.med':'Medium (≈ forearm)','t.gra':'Large (half sleeve or more)','t.pro':'Project (sleeve, chest, back)',
+ 'ci.ref':'Reference','ci.refvacia':'Pick a photo in Work and tap «I want something like this».','ci.refquitar':'Remove reference',
+ 'ci.idea':'Your idea','ci.ideaph':'E.g. a lion with a rose on my forearm, black & grey…',
+ 'ci.donde':'Where are you?','op.vivo':'I live in Mallorca','op.visita':'Visiting Mallorca','op.otra':'In another city',
+ 'ci.llego':'Arriving','ci.mevoy':'Leaving','ci.ciudad':'City','ci.nombre':'Your name','ci.previa':'Your message',
+ 'ci.tel':'Your phone','ci.telph':'+44 7700 900000','ci.mail':'Your email','ci.mailph':'you@email.com',
+ 'ci.foto':'Photo of the design or your reference','ci.fotoel':'Choose a photo','ci.fotocambiar':'Change the photo',
+ 'ci.fotohint':'It’s resized for you and reaches Aaròn with your message.',
+ 'ci.acepto':'I agree that Aaròn keeps my name, phone, email and photo to reply to me and invoice me.',
+ 'ci.faltanombre':'Add your name.','ci.faltatel':'Add your phone, with the country code.',
+ 'ci.faltamail':'Add a valid email: it’s for the invoice.','ci.faltaok':'Tick the box so Aaròn can keep your details.',
+ 'ci.guardando':'Saving your enquiry…','ci.enviado':'Done: your enquiry {c} is saved and WhatsApp opened.',
+ 'ci.adjunta':'WhatsApp opened: attach the photo in the chat.','ci.abierto':'WhatsApp opened with your message.',
+ 'ci.wa':'Send on WhatsApp','ci.ig':'Via Instagram','ci.copiar':'Just copy','ci.copiado':'Copied ✓ Paste it in the Instagram chat.','ci.copiado2':'Copied ✓','ci.nocopia':'Couldn’t copy: select the text and copy it by hand.',
+ 'fi.h':'See you<br>in Mallorca','fi.fotos':'Photos and work © Aaròn Manrique',
+ 'lb.quiero':'I want something like this →','lb.cerrar':'Close','lb.prev':'Previous','lb.next':'Next',
+ 'fase0':'01 · The signature','fase1':'02 · The radiance','fase2':'03 · The portal','hud':'Move the mouse: the ink dodges you · Click: ripple',
+ 'm.hola':'Hi Aaròn! I’m {n}. I’d like to book a session 🖤','m.hola0':'Hi Aaròn! I’d like to book a session 🖤','m.estilo':'Style','m.zona':'Placement','m.tam':'Size',
+ 'm.ref':'Reference: something like “{r}” from your website','m.idea':'Idea','m.vivo':'I live in Mallorca','m.visita':'I’m visiting Mallorca{f}',
+ 'm.fechas':' from {a} to {b}','m.desde':' from {a}','m.otra':'I’m in {c}: let me know if you come by','m.otra0':'I’m in another city: let me know if you come by',
+ 'm.fin':'I’ll send reference photos here.',
+ 'm.mail':'Email','m.foto':'Design photo: {u}','m.fotoprev':'Design photo: attached','m.fotoadj':'I’ll send the design photo here.'
+}};
+
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const root=document.documentElement;
+const leer=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+const guardar=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+const qLang=new URLSearchParams(location.search).get('lang');
+let LANG=['es','en'].includes(qLang)?qLang:(leer('doblea-lang')||'es');
+const t=(k,v={})=>(T[LANG][k]??T.es[k]??'').replace(/\{(\w)\}/g,(_,x)=>v[x]??'');
+
+/* ── idioma ── */
+function cromoLineas(el){ el.innerHTML=el.innerHTML.split(/<br\s*\/?>/i).map(s=>`<span class="cromo">${s}</span>`).join('<br>'); }
+function idioma(l){
+  LANG=l; root.lang=l; guardar('doblea-lang',l);
+  $$('[data-i18n]').forEach(el=>{ el.innerHTML=t(el.dataset.i18n); if(el.classList.contains('cl')) cromoLineas(el); });
+  $$('[data-i18n-ph]').forEach(el=>el.placeholder=t(el.dataset.i18nPh));
+  $$('[data-i18n-aria]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.i18nAria)));
+  $('#lang').textContent=l==='es'?'EN':'ES';
+  $$('[data-cinta]').forEach(el=>{ const s=`<span>${t(el.dataset.cinta)}</span>`.repeat(6); el.innerHTML=s+s; });
+  pintarChips(); titularGrilla(); pintarRef(); armar();
+  if(lbI>=0) mostrar(lbI);
+}
+$('#lang').addEventListener('click',()=>idioma(LANG==='es'?'en':'es'));
+
+/* ── galería ── */
+let filtro='todo';
+const grilla=$('#grilla'), chips=$('#chips');
+const pasa=(f,fl)=>fl==='todo'||f.tags.includes(fl);
+FOTOS.forEach((f,i)=>{
+  const b=document.createElement('button'); b.type='button'; b.className='pieza'; b.dataset.i=i;
+  b.innerHTML=`<img src="img/${f.f}-t.jpg" width="${f.w}" height="${f.h}" loading="lazy" decoding="async" alt=""><figcaption></figcaption>`;
+  b.addEventListener('click',()=>abrir(i,b));
+  grilla.appendChild(b);
+});
+function titularGrilla(){ $$('.pieza').forEach(b=>{ const f=FOTOS[+b.dataset.i]; b.querySelector('img').alt=f[LANG]; b.querySelector('figcaption').textContent=f[LANG]; b.setAttribute('aria-label',f[LANG]); });
+  $$('.m').forEach(m=>{ const f=FOTOS.find(x=>x.f===m.dataset.f); if(!f) return; m.querySelector('img').alt=f[LANG]; m.querySelector('figcaption').textContent=f[LANG]; m.setAttribute('aria-label',f[LANG]); }); }
+// La portada es su obra: tocar una foto del mosaico la abre en grande, como en la galería.
+$$('.m').forEach(m=>m.addEventListener('click',()=>{ const i=FOTOS.findIndex(x=>x.f===m.dataset.f); if(i>=0) abrir(i,m); }));
+function pintarChips(){
+  chips.innerHTML=FILTROS.filter(fl=>FOTOS.some(f=>pasa(f,fl))).map(fl=>
+    `<button type="button" class="chip" data-f="${fl}" aria-pressed="${fl===filtro}">${t('f.'+fl)}<sup>${FOTOS.filter(f=>pasa(f,fl)).length}</sup></button>`).join('');
+}
+chips.addEventListener('click',e=>{
+  const c=e.target.closest('.chip'); if(!c) return;
+  filtro=c.dataset.f; $$('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c));
+  $$('.pieza').forEach(b=>{ const ok=pasa(FOTOS[+b.dataset.i],filtro); b.hidden=!ok; if(ok){ b.style.animation='none'; b.offsetWidth; b.style.animation=''; } });
+});
+
+/* ── lightbox ── */
+const lb=$('#lb'), lbImg=$('#lb-img');
+let lbI=-1, lbVuelta=null;
+const visibles=()=>FOTOS.map((f,i)=>i).filter(i=>pasa(FOTOS[i],filtro));
+function mostrar(i){
+  lbI=i; const f=FOTOS[i], v=visibles(), pos=v.indexOf(i);
+  lbImg.src=`img/${f.f}.jpg`; lbImg.alt=f[LANG]; lbImg.width=f.w; lbImg.height=f.h;
+  $('#lb-t').textContent=f[LANG];
+  $('#lb-n').textContent=`${String(pos+1).padStart(2,'0')} / ${String(v.length).padStart(2,'0')}`;
+}
+function abrir(i,desde){ lbVuelta=desde; mostrar(i); lb.classList.add('abierta'); lb.setAttribute('aria-hidden','false'); root.style.overflow='hidden'; $('#lb-x').focus(); }
+function cerrar(){ lb.classList.remove('abierta'); lb.setAttribute('aria-hidden','true'); root.style.overflow=''; lbI=-1; if(lbVuelta) lbVuelta.focus({preventScroll:true}); }
+function mover(d){ const v=visibles(); mostrar(v[(v.indexOf(lbI)+d+v.length)%v.length]); }
+$('#lb-x').addEventListener('click',cerrar);
+$('#lb-prev').addEventListener('click',()=>mover(-1));
+$('#lb-next').addEventListener('click',()=>mover(1));
+lb.addEventListener('click',e=>{ if(e.target===lb||e.target.classList.contains('lb-fig')) cerrar(); });
+addEventListener('keydown',e=>{ if(lbI<0) return; if(e.key==='Escape') cerrar(); if(e.key==='ArrowLeft') mover(-1); if(e.key==='ArrowRight') mover(1); });
+let tx=null;
+lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx; tx=null; if(Math.abs(dx)>50) mover(dx<0?1:-1); },{passive:true});
+$('#lb-quiero').addEventListener('click',()=>{
+  const f=FOTOS[lbI]; ref=lbI;
+  const est=f.tags.includes('fine')?'fine':'realismo'; $(`#e-${est}`).checked=true;
+  if(f.tags.includes('mangas')) form.zona.value='manga';
+  cerrar(); pintarRef(); armar();
+  $('#cita').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+});
+
+/* ── armador de cita ── */
+const form=$('#armador'), previa=$('#previa');
+let ref=-1;
+function pintarRef(){
+  const box=$('#ref');
+  if(ref<0){ box.innerHTML=`<p class="ref-vacia">${t('ci.refvacia')}</p>`; return; }
+  const f=FOTOS[ref];
+  box.innerHTML=`<span class="ref-chip"><img src="img/${f.f}-t.jpg" alt=""><b>${f[LANG]}</b><button type="button" aria-label="${t('ci.refquitar')}">✕</button></span>`;
+  box.querySelector('button').addEventListener('click',()=>{ ref=-1; pintarRef(); armar(); });
+}
+const fecha=v=>{ if(!v) return ''; const [y,m,d]=v.split('-'); return `${d}/${m}`; };
+const opcion=(sel)=>sel.value?sel.selectedOptions[0].textContent:'';
+function texto(extra={}){
+  const F=form, l=[];
+  const n=F.nombre.value.trim();
+  l.push(n?t('m.hola',{n}):t('m.hola0'));
+  const est=F.querySelector('[name=estilo]:checked');
+  if(est) l.push(`• ${t('m.estilo')}: ${t('op.'+est.value)}`);
+  if(F.zona.value) l.push(`• ${t('m.zona')}: ${opcion(F.zona)}`);
+  if(F.tam.value) l.push(`• ${t('m.tam')}: ${opcion(F.tam)}`);
+  if(ref>=0) l.push(`• ${t('m.ref',{r:FOTOS[ref][LANG]})}`);
+  const idea=F.idea.value.trim(); if(idea) l.push(`• ${t('m.idea')}: ${idea}`);
+  const d=F.querySelector('[name=donde]:checked');
+  if(d){
+    if(d.value==='vivo') l.push(`• ${t('m.vivo')}`);
+    if(d.value==='visita'){ const a=fecha(F.d1.value), b=fecha(F.d2.value); l.push(`• ${t('m.visita',{f:a&&b?t('m.fechas',{a,b}):a?t('m.desde',{a}):''})}`); }
+    if(d.value==='otra'){ const c=F.ciudad.value.trim(); l.push(`• ${c?t('m.otra',{c}):t('m.otra0')}`); }
+  }
+  const mail=F.email.value.trim(); if(mail) l.push(`• ${t('m.mail')}: ${mail}`);
+  // La foto: en la vista previa «va adjunta»; al enviar, su link si se pudo subir.
+  if(extra.foto) l.push(`• ${t('m.foto',{u:extra.foto})}`);
+  else if(archivo&&!extra.final) l.push(`• ${t('m.fotoprev')}`);
+  l.push('',extra.final&&archivo&&!extra.foto?t('m.fotoadj'):t('m.fin'));
+  return l.join('\n');
+}
+function armar(){
+  const d=form.querySelector('[name=donde]:checked');
+  $('#sub-visita').hidden=!(d&&d.value==='visita'); $('#sub-otra').hidden=!(d&&d.value==='otra');
+  previa.textContent=texto();
+  $('#b-wa').hidden=!CFG.whatsapp;
+  pintarFoto();
+}
+
+/* La foto del diseño (051). Un link de WhatsApp lleva texto y no archivos: la
+   página la sube junto con la consulta y el mensaje lleva su link. Se achica
+   acá (1600 px, JPEG) antes de subirla, y al redibujarla se pierden los datos
+   ocultos de la cámara, como dónde se sacó. */
+let archivo=null;
+function pintarFoto(){ $('#foto-prev').hidden=!archivo; $('#foto-txt').textContent=t(archivo?'ci.fotocambiar':'ci.fotoel'); }
+form.foto.addEventListener('change',()=>{
+  const f=form.foto.files[0], p=$('#foto-prev');
+  archivo=f&&/^image\//.test(f.type)?f:null;
+  if(p.src) URL.revokeObjectURL(p.src);
+  if(archivo) p.src=URL.createObjectURL(archivo); else p.removeAttribute('src');
+  armar();
+});
+async function achicar(f){
+  const bmp=await createImageBitmap(f), k=Math.min(1,1600/Math.max(bmp.width,bmp.height));
+  const cv=document.createElement('canvas'); cv.width=Math.round(bmp.width*k); cv.height=Math.round(bmp.height*k);
+  cv.getContext('2d').drawImage(bmp,0,0,cv.width,cv.height); if(bmp.close) bmp.close();
+  for(const q of [.85,.72,.6]){ const u=cv.toDataURL('image/jpeg',q); if(u.length<1_900_000) return u; }
+  return null;
+}
+
+/* Guardar la consulta en el panel de Aaròn (nombre, teléfono, mail, foto) es
+   para facturar a mano. Solo desde su dominio: en la vitrina la API no deja
+   escribir, y en local solo con ?api=http://localhost:PUERTO. Si guardar
+   falla, WhatsApp se abre igual: guardar no puede impedir que el cliente escriba. */
+const params=new URLSearchParams(location.search);
+const LOCAL=/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+const apiLocal=LOCAL&&/^http:\/\/localhost:\d+$/.test(params.get('api')||'')?params.get('api'):'';
+const GUARDA=!!CFG.api&&!['demos.hg-vl.com','0800webs.com'].includes(location.hostname)&&(!LOCAL||!!apiLocal);
+const API=(apiLocal||CFG.api)+'/v1/'+CFG.marca;
+$('#b-wa').addEventListener('click',async()=>{
+  const F=form, b=$('#b-wa');
+  const nombre=F.nombre.value.trim(), tel=F.telefono.value.trim(), email=F.email.value.trim();
+  const falta=nombre.length<2?['ci.faltanombre',F.nombre]
+    :!/^[+0-9 ()-]{8,25}$/.test(tel)||tel.replace(/\D/g,'').length<8?['ci.faltatel',F.telefono]
+    :!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)?['ci.faltamail',F.email]
+    :!F.acepto.checked?['ci.faltaok',F.acepto]:null;
+  if(falta){ avisar(t(falta[0])); falta[1].focus(); return; }
+  // La pestaña se abre YA, en el mismo toque: abierta después de esperar la subida, el navegador la bloquea.
+  const w=window.open('','_blank');
+  b.disabled=true;
+  let r=null;
+  if(GUARDA){
+    avisar(t('ci.guardando'));
+    try{
+      const imagen=archivo?await achicar(archivo).catch(()=>null):null;
+      const x=await fetch(API+'/consultas',{method:'POST',headers:{'content-type':'application/json'},
+        // Un número español escrito sin prefijo (9 cifras) es el mismo cliente que con +34.
+        body:JSON.stringify({nombre,telefono:/^[6789]\d{8}$/.test(tel.replace(/\D/g,''))&&!tel.trim().startsWith('+')?'+34'+tel.replace(/\D/g,''):tel,
+          email,mensaje:texto(),...(imagen?{imagen}:{})})});
+      if(x.ok) r=await x.json();
+    }catch(e){}
+  }
+  const url=`https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(texto({final:true,foto:r&&r.foto}))}`;
+  if(w){ try{ w.opener=null; }catch(e){} w.location.href=url; } else location.href=url;
+  avisar(r?t('ci.enviado',{c:r.codigo}):archivo?t('ci.adjunta'):t('ci.abierto'));
+  b.disabled=false;
+});
+form.addEventListener('input',armar); form.addEventListener('change',armar);
+form.addEventListener('submit',e=>e.preventDefault());
+async function copiar(){
+  const tx=texto();
+  try{ await navigator.clipboard.writeText(tx); return true; }
+  catch(e){ const ta=document.createElement('textarea'); ta.value=tx; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select();
+    let ok=false; try{ ok=document.execCommand('copy'); }catch(_){} ta.remove(); return ok; }
+}
+const nota=$('#nota'); let notaT;
+function avisar(m){ nota.textContent=m; clearTimeout(notaT); notaT=setTimeout(()=>nota.textContent='',6000); }
+$('#b-ig').addEventListener('click',async()=>{
+  const ok=await copiar(); avisar(ok?t('ci.copiado'):t('ci.nocopia'));
+  window.open(`https://ig.me/m/${CFG.instagram}`,'_blank','noopener');
+});
+$('#b-copiar').addEventListener('click',async()=>avisar((await copiar())?t('ci.copiado2'):t('ci.nocopia')));
+$$('[data-donde]').forEach(a=>a.addEventListener('click',()=>{
+  $(`#d-${a.dataset.donde}`).checked=true; armar();
+  setTimeout(()=>(a.dataset.donde==='otra'?form.ciudad:form.d1).focus({preventScroll:true}),700);
+}));
+
+/* ── barra, CTA fija, reveal, parallax, tablero ── */
+const top=$('#top'), fijo=$('#fijo');
+let enHero=true, enCita=false;
+const fijoVer=()=>fijo.classList.toggle('ver',!enHero&&!enCita);
+new IntersectionObserver(([e])=>{enHero=e.isIntersecting;fijoVer();},{rootMargin:'0px 0px -40% 0px'}).observe($('#inicio'));
+const enForm=new Set();
+const ioForm=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?enForm.add(e.target):enForm.delete(e.target));enCita=enForm.size>0;fijoVer();},{threshold:.15});
+ioForm.observe($('#cita'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{threshold:.15});
+$$('.rv').forEach(el=>io.observe(el));
+const reducido=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pars=$$('[data-par]');
+let pend=false;
+function alScroll(){
+  pend=false; top.classList.toggle('solida',scrollY>40); root.classList.toggle('arriba',scrollY<innerHeight*0.5);
+  if(reducido) return;
+  pars.forEach(el=>{ const r=el.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
+    el.style.transform=`translateY(${((r.top+r.height/2-innerHeight/2)*-parseFloat(el.dataset.par)).toFixed(1)}px)`; });
+}
+addEventListener('scroll',()=>{ if(!pend){ pend=true; requestAnimationFrame(alScroll); } },{passive:true});
+alScroll();
+
+idioma(LANG);
+})();
+</script>
+</body>
+</html>
