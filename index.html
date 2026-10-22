@@ -15,7 +15,9 @@
      Versión SOBRIA (pedido del owner): negro, serif (Cormorant Garamond + EB Garamond), su firma en gótica
      y un mosaico de seis trabajos en la portada. La versión ácida con el fondo UMBRAL quedó en acido.html.
      Fotos: captura ZETA LENS de su perfil, sin regradear. ES/EN para el turista de Mallorca. Sin precios ni
-     políticas inventadas. Solo contacto (decisión del owner, 22/10): WhatsApp de Aaròn +34 662 569 821 e Instagram. -->
+     políticas inventadas. Solo contacto (decisión del owner, 22/10): WhatsApp de Aaròn +34 662 569 821 e Instagram.
+     23/10: la casilla de contacto sube al hero (columna derecha; en celular, debajo del mosaico) y de fondo
+     va la lluvia de estrellas de demo-yarcho (lluvia.js), detrás de todo y nunca sobre sus fotos. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
@@ -34,7 +36,9 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   *{box-sizing:border-box;margin:0;padding:0}
   [hidden]{display:none!important}
   html{background:var(--bg);-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
-  body{background:var(--bg);color:var(--ink);font:400 18px/1.6 var(--b);overflow-x:clip;-webkit-font-smoothing:antialiased}
+  /* body transparente: la lluvia (z-index -1) vive entre el fondo de html y el contenido */
+  body{background:transparent;color:var(--ink);font:400 18px/1.6 var(--b);overflow-x:clip;-webkit-font-smoothing:antialiased}
+  #lluvia{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;transition:opacity .6s}
   img{display:block;max-width:100%;height:auto}
   a{color:inherit}
   button,input,select,textarea{font:inherit;color:inherit}
@@ -73,21 +77,23 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .top-der{display:flex;align-items:center;gap:12px}
   .lang{font:500 11px/1 var(--b);letter-spacing:.18em;border:1px solid var(--line);min-width:44px;min-height:38px;padding:0 10px;transition:border-color .2s}
   .lang:hover{border-color:var(--ink)}
+  .estrellas{min-width:38px;font-size:13px;color:var(--mute);transition:color .2s,border-color .2s}
+  .estrellas:hover,.estrellas[aria-pressed=true]{color:var(--ink)}
   @media(max-width:980px){.nav{display:none}}
 
-  /* ── portada: el nombre arriba, su obra abajo ── */
-  .hero{padding-top:clamp(90px,12vh,124px)}
-  .hero-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px 64px;align-items:end;padding-bottom:clamp(22px,3.4vh,40px)}
-  .kicker{grid-column:1/-1;color:var(--mute)}
-  .tag{font:300 clamp(50px,6.6vw,108px)/.9 var(--d);letter-spacing:-.02em}
+  /* ── portada: el nombre y su obra a la izquierda, la casilla de contacto a la derecha ── */
+  .hero{padding:clamp(88px,11vh,116px) 0 clamp(48px,7vh,84px)}
+  .hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,440px);gap:clamp(28px,4vw,64px);align-items:start}
+  .hero-izq{display:grid;gap:20px;min-width:0}
+  .kicker{color:var(--mute)}
+  .tag{font:300 clamp(48px,5.6vw,96px)/.9 var(--d);letter-spacing:-.02em}
   .tag .cromo:last-child{font-style:italic}
-  .hero-pie{display:grid;gap:22px;justify-items:start;padding-bottom:8px}
-  .hero-p{font-size:clamp(17px,1.35vw,20px);color:var(--ink2);max-width:40ch}
-  .ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .hero-sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 24px}
+  .hero-p{font-size:clamp(17px,1.3vw,19.5px);color:var(--ink2);max-width:44ch}
   .disp{display:inline-flex;align-items:center;gap:10px;color:var(--ink2)}
   .disp .dot{animation:late 2.4s ease-in-out infinite}
   .mosaico{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.25fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:6px;
-    height:clamp(360px,calc(100svh - 350px),720px);padding:0 6px}
+    height:clamp(300px,calc(100svh - 440px),600px);margin-top:6px}
   .m{position:relative;overflow:hidden;background:#151514;cursor:zoom-in;display:block;width:100%;height:100%}
   .m img{width:100%;height:100%;object-fit:cover;animation:aparece 1.6s cubic-bezier(.2,.7,.2,1) both;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
   @keyframes aparece{from{opacity:0;transform:scale(1.06)}}
@@ -97,6 +103,29 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .m2 img{animation-delay:.12s}.m3 img{animation-delay:.24s}.m4 img{animation-delay:.18s}.m6 img{animation-delay:.3s}.m5 img{animation-delay:.36s}
   .m figcaption{position:absolute;left:14px;bottom:12px;font:italic 400 17px/1.2 var(--d);text-align:left;opacity:0;transition:opacity .35s;text-shadow:0 1px 12px rgba(0,0,0,.85)}
   .m:hover figcaption,.m:focus-visible figcaption{opacity:1}
+
+  /* la casilla de contacto: lo primero que se ve al lado de su obra */
+  .contacto.panel{scroll-margin-top:84px;border-color:var(--line2);border-top:2px solid var(--ink);box-shadow:0 40px 90px -30px rgba(0,0,0,.85)}
+  .contacto-cab{display:grid;gap:12px;padding:clamp(22px,2.4vw,32px) clamp(22px,2.4vw,32px) 0}
+  .contacto-h{font:300 clamp(36px,3.2vw,48px)/1 var(--d);letter-spacing:-.01em}
+  .contacto-h em{font-style:italic}
+  .contacto-p{color:var(--ink2);font-size:16px;line-height:1.5}
+  .contacto .armador{padding:18px clamp(22px,2.4vw,32px) clamp(22px,2.4vw,32px);gap:16px}
+  .contacto .campo input{min-height:44px}
+  .contacto .campo textarea{min-height:64px}
+  .contacto .foto-elegir{min-height:50px}
+  .contacto .foto-elegir img{width:38px;height:50px}
+  .contacto .foto-hint{margin-top:6px}
+  .contacto .acciones .btn-acid{flex:1 1 100%;min-height:56px;font-size:12.5px}
+  .mas-datos{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .mas-datos>summary,.ver-msg>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:50px;
+    font:500 11px/1 var(--b);letter-spacing:.22em;text-transform:uppercase;color:var(--ink2)}
+  .mas-datos>summary::-webkit-details-marker,.ver-msg>summary::-webkit-details-marker{display:none}
+  .mas-datos>summary::after,.ver-msg>summary::after{content:"+";font:300 24px/.8 var(--d);color:var(--mute);transition:rotate .25s}
+  .mas-datos[open]>summary::after,.ver-msg[open]>summary::after{rotate:45deg}
+  .mas-datos>summary:hover,.ver-msg>summary:hover{color:var(--ink)}
+  .mas-datos-in{display:grid;gap:20px;padding:4px 0 22px}
+  .ver-msg>summary{min-height:36px;color:var(--mute)}
 
   /* ── secciones ── */
   .sec{position:relative;padding:clamp(90px,12vw,170px) 0;border-top:1px solid var(--line)}
@@ -170,9 +199,10 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .tip h3{font:400 25px/1.15 var(--d);margin-bottom:10px}
   .tip p{color:var(--ink2);font-size:16.5px;margin-bottom:14px}
 
-  /* 05 · cita */
+  /* 05 · preguntas (el formulario vive en el hero) */
   .cita{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,5vw,90px);align-items:start}
-  .faq{margin-top:42px;border-top:1px solid var(--line)}
+  .pq-cta{margin-top:36px}
+  .faq{border-top:1px solid var(--line)}
   .faq details{border-bottom:1px solid var(--line)}
   .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font:400 23px/1.25 var(--d)}
   .faq summary::-webkit-details-marker{display:none}
@@ -255,9 +285,9 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
 
   @media(max-width:860px){
     .hero-in,.est,.mll,.cita{grid-template-columns:minmax(0,1fr)}
-    .mosaico{display:flex;height:auto;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gut) 4px;scrollbar-width:none}
+    .mosaico{display:flex;height:auto;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--gut)*-1);padding:0 var(--gut) 4px;scrollbar-width:none}
     .mosaico::-webkit-scrollbar{display:none}
-    .m{flex:0 0 74%;aspect-ratio:3/4;scroll-snap-align:center}
+    .m{flex:0 0 66%;aspect-ratio:3/4;scroll-snap-align:center}
     .m figcaption{opacity:1}
     .pie{grid-template-columns:minmax(0,1fr);align-items:start;padding-bottom:96px}
   }
@@ -275,6 +305,8 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
     .marca small{display:none}
     .kicker{font-size:10.5px;letter-spacing:.12em}
   }
+  /* en celular chico, «Pedir cita» ya está en la casilla del hero y en la barra fija de abajo */
+  @media(max-width:420px){.top-der .btn-s{display:none}}
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .dot,.pieza,.m img{animation:none!important}
@@ -291,6 +323,7 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
     <a href="#mallorca">Mallorca</a>
   </nav>
   <div class="top-der">
+    <button class="lang estrellas" id="b-lluvia" type="button" aria-pressed="false" data-i18n-aria="ll.aria" aria-label="Lluvia de estrellas">✦</button>
     <button class="lang" id="lang" type="button" data-i18n-aria="lang.aria" aria-label="Switch to English">EN</button>
     <a class="btn btn-acid btn-s" href="#cita" data-i18n="nav.cita">Pedir cita</a>
   </div>
@@ -300,24 +333,111 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
 <section class="hero" id="inicio" data-fase="0" data-velo="0">
   <h1 class="sr" data-i18n="h1">Doble AA Tattoo — Aaròn Manrique, tatuador de realismo en Mallorca</h1>
   <div class="hero-in wrap">
-    <p class="kicker mono" data-i18n="hero.kicker">Aaròn Manrique — tatuador · de 🇦🇷 a 🇪🇸</p>
-    <p class="tag cl" data-i18n="hero.tag">Realismo<br>negro y gris</p>
-    <div class="hero-pie">
-      <p class="hero-p" data-i18n="hero.p">Arte sacro, mitología, retratos y animales. Piezas grandes, hechas sin prisa, en Mallorca.</p>
-      <div class="ctas">
-        <a class="btn btn-acid" href="#cita" data-i18n="hero.cta">Pedir cita →</a>
-        <a class="btn btn-line" href="#trabajos" data-i18n="hero.ver">Ver trabajos</a>
+    <div class="hero-izq">
+      <p class="kicker mono" data-i18n="hero.kicker">Aaròn Manrique — tatuador · de 🇦🇷 a 🇪🇸</p>
+      <p class="tag cl" data-i18n="hero.tag">Realismo<br>negro y gris</p>
+      <div class="hero-sub">
+        <p class="hero-p" data-i18n="hero.p">Arte sacro, mitología, retratos y animales. Piezas grandes, hechas sin prisa, en Mallorca.</p>
+        <a class="lnk" href="#trabajos" data-i18n="hero.ver">Ver todos los trabajos ↓</a>
       </div>
-      <span class="disp mono"><i class="dot"></i><span data-i18n="hero.sticker">Citas disponibles</span></span>
+      <div class="mosaico" id="mosaico">
+        <button type="button" class="m m1" data-f="ultima-cena"><img src="img/ultima-cena.jpg" width="1500" height="2000" alt="" fetchpriority="high"><figcaption></figcaption></button>
+        <button type="button" class="m m2" data-f="angel-manga"><img src="img/angel-manga-t.jpg" width="1200" height="1600" alt=""><figcaption></figcaption></button>
+        <button type="button" class="m m3" data-f="dios-calavera"><img src="img/dios-calavera-t.jpg" width="1200" height="1600" alt=""><figcaption></figcaption></button>
+        <button type="button" class="m m4" data-f="virgen"><img src="img/virgen.jpg" width="720" height="1280" alt=""><figcaption></figcaption></button>
+        <button type="button" class="m m6" data-f="tigre-elefante"><img src="img/tigre-elefante-t.jpg" width="1200" height="1600" alt=""><figcaption></figcaption></button>
+        <button type="button" class="m m5" data-f="pegaso"><img src="img/pegaso.jpg" width="901" height="1600" alt=""><figcaption></figcaption></button>
+      </div>
     </div>
-  </div>
-  <div class="mosaico" id="mosaico">
-    <button type="button" class="m m1" data-f="ultima-cena"><img src="img/ultima-cena.jpg" width="1500" height="2000" alt="" fetchpriority="high"><figcaption></figcaption></button>
-    <button type="button" class="m m2" data-f="angel-manga"><img src="img/angel-manga-t.jpg" width="1200" height="1600" alt=""><figcaption></figcaption></button>
-    <button type="button" class="m m3" data-f="dios-calavera"><img src="img/dios-calavera-t.jpg" width="1200" height="1600" alt=""><figcaption></figcaption></button>
-    <button type="button" class="m m4" data-f="virgen"><img src="img/virgen.jpg" width="720" height="1280" alt=""><figcaption></figcaption></button>
-    <button type="button" class="m m6" data-f="tigre-elefante"><img src="img/tigre-elefante-t.jpg" width="1200" height="1600" alt=""><figcaption></figcaption></button>
-    <button type="button" class="m m5" data-f="pegaso"><img src="img/pegaso.jpg" width="901" height="1600" alt=""><figcaption></figcaption></button>
+
+    <aside class="contacto panel" id="cita" aria-labelledby="ci-h">
+      <div class="contacto-cab">
+        <span class="disp mono"><i class="dot"></i><span data-i18n="hero.sticker">Citas disponibles</span></span>
+        <h2 class="contacto-h" id="ci-h" data-i18n="ci.h">Pide tu <em>cita</em></h2>
+        <p class="contacto-p" data-i18n="ci.p">Te contesta por WhatsApp. Cuéntale tu idea y, si tienes, súmale una foto.</p>
+      </div>
+      <form class="armador" id="armador" novalidate>
+        <label class="campo"><span data-i18n="ci.nombre">Tu nombre</span><input name="nombre" autocomplete="name" maxlength="120"></label>
+        <div class="dos">
+          <label class="campo"><span data-i18n="ci.tel">Tu teléfono</span><input name="telefono" type="tel" autocomplete="tel" maxlength="25" data-i18n-ph="ci.telph"></label>
+          <label class="campo"><span data-i18n="ci.mail">Tu mail</span><input name="email" type="email" autocomplete="email" maxlength="200" data-i18n-ph="ci.mailph"></label>
+        </div>
+        <label class="campo"><span data-i18n="ci.idea">Tu idea</span><textarea name="idea" rows="2" data-i18n-ph="ci.ideaph"></textarea></label>
+        <div class="campo">
+          <span data-i18n="ci.foto">Foto del diseño o de tu referencia</span>
+          <label class="foto-elegir"><input type="file" name="foto" accept="image/*"><img id="foto-prev" alt="" hidden><span id="foto-txt">Elegir foto</span></label>
+          <small class="foto-hint" data-i18n="ci.fotohint">Se achica sola y le llega a Aaròn con tu mensaje.</small>
+        </div>
+        <details class="mas-datos" id="mas-datos">
+          <summary data-i18n="ci.masdatos">Más detalles (opcional)</summary>
+          <div class="mas-datos-in">
+            <fieldset>
+              <legend data-i18n="ci.estilo">Estilo</legend>
+              <div class="pills">
+                <input type="radio" name="estilo" id="e-realismo" value="realismo"><label for="e-realismo" data-i18n="op.realismo">Realismo negro y gris</label>
+                <input type="radio" name="estilo" id="e-fine" value="fine"><label for="e-fine" data-i18n="op.fine">Fine line</label>
+                <input type="radio" name="estilo" id="e-nose" value="nose"><label for="e-nose" data-i18n="op.nose">Aún no lo sé</label>
+              </div>
+            </fieldset>
+            <div class="dos">
+              <label class="campo"><span data-i18n="ci.zona">Zona</span>
+                <select name="zona">
+                  <option value="" data-i18n="ci.elegir">Elige…</option>
+                  <option value="antebrazo" data-i18n="z.antebrazo">Antebrazo</option>
+                  <option value="brazo" data-i18n="z.brazo">Brazo</option>
+                  <option value="hombro" data-i18n="z.hombro">Hombro</option>
+                  <option value="manga" data-i18n="z.manga">Manga completa</option>
+                  <option value="pierna" data-i18n="z.pierna">Pierna</option>
+                  <option value="gemelo" data-i18n="z.gemelo">Gemelo</option>
+                  <option value="pecho" data-i18n="z.pecho">Pecho</option>
+                  <option value="espalda" data-i18n="z.espalda">Espalda</option>
+                  <option value="otra" data-i18n="z.otra">Otra zona</option>
+                </select>
+              </label>
+              <label class="campo"><span data-i18n="ci.tam">Tamaño</span>
+                <select name="tam">
+                  <option value="" data-i18n="ci.elegir">Elige…</option>
+                  <option value="peq" data-i18n="t.peq">Pequeño (≈ palma)</option>
+                  <option value="med" data-i18n="t.med">Mediano (≈ antebrazo)</option>
+                  <option value="gra" data-i18n="t.gra">Grande (media manga o más)</option>
+                  <option value="pro" data-i18n="t.pro">Proyecto (manga, pecho, espalda)</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <p class="etq" data-i18n="ci.ref">Referencia</p>
+              <div id="ref"></div>
+            </div>
+            <fieldset>
+              <legend data-i18n="ci.donde">¿Dónde estás?</legend>
+              <div class="pills">
+                <input type="radio" name="donde" id="d-vivo" value="vivo"><label for="d-vivo" data-i18n="op.vivo">Vivo en Mallorca</label>
+                <input type="radio" name="donde" id="d-visita" value="visita"><label for="d-visita" data-i18n="op.visita">De visita en Mallorca</label>
+                <input type="radio" name="donde" id="d-otra" value="otra"><label for="d-otra" data-i18n="op.otra">En otra ciudad</label>
+              </div>
+              <div class="sub" id="sub-visita" hidden>
+                <label class="campo"><span data-i18n="ci.llego">Llego</span><input type="date" name="d1"></label>
+                <label class="campo"><span data-i18n="ci.mevoy">Me voy</span><input type="date" name="d2"></label>
+              </div>
+              <div class="sub" id="sub-otra" hidden>
+                <label class="campo"><span data-i18n="ci.ciudad">Ciudad</span><input name="ciudad" autocomplete="address-level2"></label>
+              </div>
+            </fieldset>
+          </div>
+        </details>
+        <label class="ok-datos"><input type="checkbox" name="acepto"><span data-i18n="ci.acepto">Acepto que Aaròn guarde mi nombre, teléfono, mail y la foto para contestarme y hacerme la factura.</span></label>
+        <div class="acciones">
+          <button type="button" class="btn btn-acid" id="b-wa" hidden data-i18n="ci.wa">Enviar por WhatsApp</button>
+          <button type="button" class="btn btn-line" id="b-ig" data-i18n="ci.ig">Por Instagram</button>
+          <button type="button" class="lnk" id="b-copiar" data-i18n="ci.copiar">Solo copiar</button>
+        </div>
+        <p class="nota mono" id="nota" role="status" aria-live="polite"></p>
+        <details class="previa ver-msg">
+          <summary data-i18n="ci.previa">Tu mensaje</summary>
+          <pre id="previa"></pre>
+        </details>
+      </form>
+    </aside>
   </div>
 </section>
 
@@ -396,94 +516,18 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   </div>
 </section>
 
-<section class="sec" id="cita" data-fase="1.7" data-velo="0.66">
+<section class="sec" id="preguntas" data-fase="1.7" data-velo="0.66">
   <div class="wrap cita">
     <div>
-      <p class="num mono" data-i18n="ci.num">05 — Cita</p>
-      <h2 class="h2 cl" data-i18n="ci.h">Pide<br>tu cita</h2>
-      <p class="lead" data-i18n="ci.p"></p>
-      <div class="faq">
-        <details><summary data-i18n="faq.1q">¿Cuánto cuesta?</summary><p data-i18n="faq.1a"></p></details>
-        <details><summary data-i18n="faq.2q">¿Cuánto tarda una pieza grande?</summary><p data-i18n="faq.2a"></p></details>
-        <details><summary data-i18n="faq.3q">¿Y si estoy de vacaciones?</summary><p data-i18n="faq.3a"></p></details>
-      </div>
+      <p class="num mono" data-i18n="pq.num">05 — Preguntas</p>
+      <h2 class="h2 cl" data-i18n="pq.h">Antes de<br>escribirle</h2>
+      <a class="btn btn-acid pq-cta" href="#cita" data-i18n="pq.cta">Pedir cita ↑</a>
     </div>
-    <form class="armador panel" id="armador" novalidate>
-      <fieldset>
-        <legend data-i18n="ci.estilo">Estilo</legend>
-        <div class="pills">
-          <input type="radio" name="estilo" id="e-realismo" value="realismo"><label for="e-realismo" data-i18n="op.realismo">Realismo negro y gris</label>
-          <input type="radio" name="estilo" id="e-fine" value="fine"><label for="e-fine" data-i18n="op.fine">Fine line</label>
-          <input type="radio" name="estilo" id="e-nose" value="nose"><label for="e-nose" data-i18n="op.nose">Aún no lo sé</label>
-        </div>
-      </fieldset>
-      <div class="dos">
-        <label class="campo"><span data-i18n="ci.zona">Zona</span>
-          <select name="zona">
-            <option value="" data-i18n="ci.elegir">Elige…</option>
-            <option value="antebrazo" data-i18n="z.antebrazo">Antebrazo</option>
-            <option value="brazo" data-i18n="z.brazo">Brazo</option>
-            <option value="hombro" data-i18n="z.hombro">Hombro</option>
-            <option value="manga" data-i18n="z.manga">Manga completa</option>
-            <option value="pierna" data-i18n="z.pierna">Pierna</option>
-            <option value="gemelo" data-i18n="z.gemelo">Gemelo</option>
-            <option value="pecho" data-i18n="z.pecho">Pecho</option>
-            <option value="espalda" data-i18n="z.espalda">Espalda</option>
-            <option value="otra" data-i18n="z.otra">Otra zona</option>
-          </select>
-        </label>
-        <label class="campo"><span data-i18n="ci.tam">Tamaño</span>
-          <select name="tam">
-            <option value="" data-i18n="ci.elegir">Elige…</option>
-            <option value="peq" data-i18n="t.peq">Pequeño (≈ palma)</option>
-            <option value="med" data-i18n="t.med">Mediano (≈ antebrazo)</option>
-            <option value="gra" data-i18n="t.gra">Grande (media manga o más)</option>
-            <option value="pro" data-i18n="t.pro">Proyecto (manga, pecho, espalda)</option>
-          </select>
-        </label>
-      </div>
-      <div>
-        <p class="etq" data-i18n="ci.ref">Referencia</p>
-        <div id="ref"></div>
-      </div>
-      <label class="campo"><span data-i18n="ci.idea">Tu idea</span><textarea name="idea" rows="3" data-i18n-ph="ci.ideaph"></textarea></label>
-      <fieldset>
-        <legend data-i18n="ci.donde">¿Dónde estás?</legend>
-        <div class="pills">
-          <input type="radio" name="donde" id="d-vivo" value="vivo"><label for="d-vivo" data-i18n="op.vivo">Vivo en Mallorca</label>
-          <input type="radio" name="donde" id="d-visita" value="visita"><label for="d-visita" data-i18n="op.visita">De visita en Mallorca</label>
-          <input type="radio" name="donde" id="d-otra" value="otra"><label for="d-otra" data-i18n="op.otra">En otra ciudad</label>
-        </div>
-        <div class="sub" id="sub-visita" hidden>
-          <label class="campo"><span data-i18n="ci.llego">Llego</span><input type="date" name="d1"></label>
-          <label class="campo"><span data-i18n="ci.mevoy">Me voy</span><input type="date" name="d2"></label>
-        </div>
-        <div class="sub" id="sub-otra" hidden>
-          <label class="campo"><span data-i18n="ci.ciudad">Ciudad</span><input name="ciudad" autocomplete="address-level2"></label>
-        </div>
-      </fieldset>
-      <label class="campo"><span data-i18n="ci.nombre">Tu nombre</span><input name="nombre" autocomplete="name" maxlength="120"></label>
-      <div class="dos">
-        <label class="campo"><span data-i18n="ci.tel">Tu teléfono</span><input name="telefono" type="tel" autocomplete="tel" maxlength="25" data-i18n-ph="ci.telph"></label>
-        <label class="campo"><span data-i18n="ci.mail">Tu mail</span><input name="email" type="email" autocomplete="email" maxlength="200" data-i18n-ph="ci.mailph"></label>
-      </div>
-      <div class="campo">
-        <span data-i18n="ci.foto">Foto del diseño o de tu referencia</span>
-        <label class="foto-elegir"><input type="file" name="foto" accept="image/*"><img id="foto-prev" alt="" hidden><span id="foto-txt">Elegir foto</span></label>
-        <small class="foto-hint" data-i18n="ci.fotohint">Se achica sola y le llega a Aaròn con tu mensaje.</small>
-      </div>
-      <label class="ok-datos"><input type="checkbox" name="acepto"><span data-i18n="ci.acepto">Acepto que Aaròn guarde mi nombre, teléfono, mail y la foto para contestarme y hacerme la factura.</span></label>
-      <div class="previa">
-        <p class="etq" data-i18n="ci.previa">Tu mensaje</p>
-        <pre id="previa"></pre>
-      </div>
-      <div class="acciones">
-        <button type="button" class="btn btn-acid" id="b-wa" hidden data-i18n="ci.wa">Enviar por WhatsApp</button>
-        <button type="button" class="btn btn-line" id="b-ig" data-i18n="ci.ig">Por Instagram</button>
-        <button type="button" class="lnk" id="b-copiar" data-i18n="ci.copiar">Solo copiar</button>
-      </div>
-      <p class="nota mono" id="nota" role="status" aria-live="polite"></p>
-    </form>
+    <div class="faq">
+      <details><summary data-i18n="faq.1q">¿Cuánto cuesta?</summary><p data-i18n="faq.1a"></p></details>
+      <details><summary data-i18n="faq.2q">¿Cuánto tarda una pieza grande?</summary><p data-i18n="faq.2a"></p></details>
+      <details><summary data-i18n="faq.3q">¿Y si estoy de vacaciones?</summary><p data-i18n="faq.3a"></p></details>
+    </div>
   </div>
 </section>
 
@@ -567,7 +611,7 @@ es:{
  'h1':'Doble AA Tattoo — Aaròn Manrique, tatuador de realismo en Mallorca',
  'hero.sticker':'Citas disponibles','hero.kicker':'Aaròn Manrique — tatuador · de 🇦🇷 a 🇪🇸',
  'hero.tag':'Realismo<br>negro y gris','hero.p':'Arte sacro, mitología, retratos y animales. Piezas grandes, hechas sin prisa, en Mallorca.',
- 'hero.cta':'Pedir cita →','hero.ver':'Ver trabajos',
+ 'hero.cta':'Pedir cita →','hero.ver':'Ver todos los trabajos ↓',
  'cinta1':'Realismo ✦ Fine line ✦ Mallorca ✦ Citas disponibles ✦','cinta2':'Doble AA Tattoo ✦ Negro y gris ✦ @dobleaatattoo ✦',
  'est.num':'01 — El estudio','est.q':'Lo hecho a mano lleva tiempo, <em>y el tiempo es un lujo.</em>','est.cite':'— Aaròn, en sus reels',
  'est.p':'Cada pieza parte de tu idea y se diseña para la zona donde va. Un estudio tranquilo en Mallorca, sin prisas y con tiempo para cada tatuaje.',
@@ -584,7 +628,8 @@ es:{
  'ml.origen':'Origen','ml.dest':'Destacada','ml.base':'Base','ml.lon':'Londres','ml.fra':'Francia','ml.egy':'Egipto','ml.foto':'De su Instagram',
  'ml.t1':'¿Vienes de vacaciones?','ml.t1p':'Escribe antes de llegar para guardar fecha. Un consejo: mientras cura conviene evitar el sol fuerte, el mar y la piscina, así que mejor tatuarse al final del viaje.','ml.t1a':'Avisar mis fechas →',
  'ml.t2':'¿Estás en otra ciudad?','ml.t2p':'Déjale tu ciudad en el mensaje y te avisa si pasa por allí.','ml.t2a':'Dejar mi ciudad →',
- 'ci.num':'05 — Cita','ci.h':'Pide<br>tu cita','ci.p':'Arma tu mensaje en un minuto y mándaselo por WhatsApp. Las fotos de referencia se las pasas en el mismo chat.',
+ 'ci.h':'Pide tu <em>cita</em>','ci.p':'Te contesta por WhatsApp. Cuéntale tu idea y, si tienes, súmale una foto.','ci.masdatos':'Más detalles (opcional)',
+ 'pq.num':'05 — Preguntas','pq.h':'Antes de<br>escribirle','pq.cta':'Pedir cita ↑','ll.aria':'Lluvia de estrellas',
  'faq.1q':'¿Cuánto cuesta?','faq.1a':'Depende del tamaño, la zona y las horas. Escríbele con tu idea y te pasa presupuesto.',
  'faq.2q':'¿Cuánto tarda una pieza grande?','faq.2a':'Un brazo o un pecho de realismo suele hacerse en varias sesiones. Lo hablan al armar el diseño.',
  'faq.3q':'¿Y si estoy de vacaciones?','faq.3a':'Se puede. Escribe con tiempo y, si puedes, deja el tatuaje para el final del viaje: mientras cura, nada de sol fuerte, mar ni piscina.',
@@ -619,7 +664,7 @@ en:{
  'h1':'Doble AA Tattoo — Aaròn Manrique, realism tattoo artist in Mallorca',
  'hero.sticker':'Booking open','hero.kicker':'Aaròn Manrique — tattoo artist · from 🇦🇷 to 🇪🇸',
  'hero.tag':'Black & grey<br>realism','hero.p':'Sacred art, mythology, portraits and animals. Big pieces, made without rushing, in Mallorca.',
- 'hero.cta':'Book a session →','hero.ver':'See the work',
+ 'hero.cta':'Book a session →','hero.ver':'See all the work ↓',
  'cinta1':'Realism ✦ Fine line ✦ Mallorca ✦ Booking open ✦','cinta2':'Doble AA Tattoo ✦ Black & grey ✦ @dobleaatattoo ✦',
  'est.num':'01 — The studio','est.q':'What’s made by hand takes time, <em>and time is a luxury.</em>','est.cite':'— Aaròn, on his reels',
  'est.p':'Every piece starts from your idea and is designed for the spot where it goes. A calm studio in Mallorca, unhurried, with time for every tattoo.',
@@ -636,7 +681,8 @@ en:{
  'ml.origen':'Origin','ml.dest':'Highlight','ml.base':'Home','ml.lon':'London','ml.fra':'France','ml.egy':'Egypt','ml.foto':'From his Instagram',
  'ml.t1':'Visiting on holiday?','ml.t1p':'Message before you arrive to hold a date. Tip: while it heals you should avoid strong sun, the sea and pools, so it’s best to get tattooed at the end of your trip.','ml.t1a':'Send my dates →',
  'ml.t2':'In another city?','ml.t2p':'Leave your city in the message and he’ll let you know if he comes by.','ml.t2a':'Leave my city →',
- 'ci.num':'05 — Booking','ci.h':'Book<br>your session','ci.p':'Build your message in a minute and send it on WhatsApp. Share your reference photos in the same chat.',
+ 'ci.h':'Book your <em>session</em>','ci.p':'He replies on WhatsApp. Tell him your idea and add a photo if you have one.','ci.masdatos':'More details (optional)',
+ 'pq.num':'05 — Questions','pq.h':'Before<br>you write','pq.cta':'Book a session ↑','ll.aria':'Star shower',
  'faq.1q':'How much is it?','faq.1a':'It depends on size, placement and hours. Send him your idea and he’ll quote you.',
  'faq.2q':'How long does a big piece take?','faq.2a':'A realism sleeve or chest piece usually takes several sessions. You’ll plan it together with the design.',
  'faq.3q':'What if I’m on holiday?','faq.3a':'Sure. Message ahead and, if you can, leave the tattoo for the end of your trip: while it heals, no strong sun, sea or pool.',
@@ -738,7 +784,7 @@ $('#lb-quiero').addEventListener('click',()=>{
   const f=FOTOS[lbI]; ref=lbI;
   const est=f.tags.includes('fine')?'fine':'realismo'; $(`#e-${est}`).checked=true;
   if(f.tags.includes('mangas')) form.zona.value='manga';
-  cerrar(); pintarRef(); armar();
+  cerrar(); pintarRef(); armar(); $('#mas-datos').open=true;
   $('#cita').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
 });
 
@@ -842,6 +888,7 @@ $('#b-wa').addEventListener('click',async()=>{
   if(w){ try{ w.opener=null; }catch(e){} w.location.href=url; } else location.href=url;
   avisar(r?t('ci.enviado',{c:r.codigo}):archivo?t('ci.adjunta'):t('ci.abierto'));
   b.disabled=false;
+  if(window.lluvia) lluvia.tanda(6);
 });
 form.addEventListener('input',armar); form.addEventListener('change',armar);
 form.addEventListener('submit',e=>e.preventDefault());
@@ -858,8 +905,12 @@ $('#b-ig').addEventListener('click',async()=>{
   window.open(`https://ig.me/m/${CFG.instagram}`,'_blank','noopener');
 });
 $('#b-copiar').addEventListener('click',async()=>avisar((await copiar())?t('ci.copiado2'):t('ci.nocopia')));
+// «Pedir cita» lleva a la casilla del hero; con mouse deja el cursor en el nombre (en celular no: abriría el teclado).
+$$('a[href="#cita"]:not([data-donde])').forEach(a=>a.addEventListener('click',()=>{
+  if(matchMedia('(hover:hover)').matches) setTimeout(()=>form.nombre.focus({preventScroll:true}),450);
+}));
 $$('[data-donde]').forEach(a=>a.addEventListener('click',()=>{
-  $(`#d-${a.dataset.donde}`).checked=true; armar();
+  $(`#d-${a.dataset.donde}`).checked=true; armar(); $('#mas-datos').open=true;
   setTimeout(()=>(a.dataset.donde==='otra'?form.ciudad:form.d1).focus({preventScroll:true}),700);
 }));
 
@@ -888,5 +939,6 @@ alScroll();
 idioma(LANG);
 })();
 </script>
+<script src="lluvia.js?v=1" data-clave="doblea-lluvia"></script>
 </body>
 </html>

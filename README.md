@@ -7,4 +7,6 @@ Sitio estático servido por GitHub Pages en https://www.dobleaa.ink (dominio en 
 - Contacto: el formulario arma el mensaje y abre el WhatsApp de Aaròn (`CFG.whatsapp` en `index.html`).
   Antes guarda nombre, teléfono, mail y la foto del diseño en el panel de negocio (API de HG, marca `doblea`,
   módulo `consultas`). Si no puede guardar, WhatsApp se abre igual.
+- La casilla de contacto vive en el hero (`#cita`); la sección 05 son las preguntas frecuentes.
+- Fondo: `lluvia.js`, la lluvia de estrellas de demo-yarcho (WebGL2, detrás de todo, botón ✦; recuerda en `doblea-lluvia` si el visitante la apaga).
 - Fotos: de su Instagram (@dobleaatattoo), sin retocar.
