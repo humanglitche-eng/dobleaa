@@ -104,8 +104,11 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .m figcaption{position:absolute;left:14px;bottom:12px;font:italic 400 17px/1.2 var(--d);text-align:left;opacity:0;transition:opacity .35s;text-shadow:0 1px 12px rgba(0,0,0,.85)}
   .m:hover figcaption,.m:focus-visible figcaption{opacity:1}
 
-  /* la casilla de contacto: lo primero que se ve al lado de su obra */
-  .contacto.panel{scroll-margin-top:84px;border-color:var(--line2);border-top:2px solid var(--ink);box-shadow:0 40px 90px -30px rgba(0,0,0,.85)}
+  /* la casilla de contacto, en negativo: clara sobre la página negra, para que sea lo primero que se ve.
+     Se invierten las variables y todo lo de adentro (campos, pastillas, botones, foco) las hereda. */
+  .contacto.panel{--bg:#ece7df;--panel:#ece7df;--ink:#0b0b0b;--ink2:#3b3732;--mute:#6c665d;
+    --line:rgba(11,11,11,.15);--line2:rgba(11,11,11,.34);color-scheme:light;color:var(--ink);
+    scroll-margin-top:84px;border:0;box-shadow:0 40px 90px -30px rgba(0,0,0,.9)}
   .contacto-cab{display:grid;gap:12px;padding:clamp(22px,2.4vw,32px) clamp(22px,2.4vw,32px) 0}
   .contacto-h{font:300 clamp(36px,3.2vw,48px)/1 var(--d);letter-spacing:-.01em}
   .contacto-h em{font-style:italic}
@@ -225,7 +228,7 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .campo select{appearance:none;padding-right:28px;background-repeat:no-repeat;background-size:6px 6px;
     background-image:linear-gradient(45deg,transparent 50%,var(--ink2) 50%),linear-gradient(135deg,var(--ink2) 50%,transparent 50%);
     background-position:calc(100% - 12px) 22px,calc(100% - 6px) 22px}
-  .campo select option{background:#111;color:var(--ink)}
+  .campo select option{background:var(--bg);color:var(--ink)}
   .campo textarea{resize:vertical;min-height:84px}
   .campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--ink)}
   .sub{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:6px}
@@ -235,7 +238,7 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .ref-chip button{width:36px;height:36px;color:var(--mute);font-size:16px}
   .ref-chip button:hover{color:var(--ink)}
   .ref-vacia{color:var(--mute);font-style:italic;font-size:16.5px}
-  .previa pre{white-space:pre-wrap;word-break:break-word;font:400 15.5px/1.6 var(--b);color:var(--ink2);background:rgba(255,255,255,.025);
+  .previa pre{white-space:pre-wrap;word-break:break-word;font:400 15.5px/1.6 var(--b);color:var(--ink2);background:rgba(128,128,128,.07);
     border-left:1px solid var(--line2);padding:14px 18px;max-height:260px;overflow:auto}
   .acciones{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px}
   .nota{min-height:16px;color:var(--ink2)}
