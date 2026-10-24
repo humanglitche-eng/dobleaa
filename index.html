@@ -17,7 +17,8 @@
      Fotos: captura ZETA LENS de su perfil, sin regradear. ES/EN para el turista de Mallorca. Sin precios ni
      políticas inventadas. Solo contacto (decisión del owner, 22/10): WhatsApp de Aaròn +34 662 569 821 e Instagram.
      23/10: la casilla de contacto sube al hero (columna derecha; en celular, debajo del mosaico) y de fondo
-     va la lluvia de estrellas de demo-yarcho (lluvia.js), detrás de todo y nunca sobre sus fotos. -->
+     va la lluvia de estrellas de demo-yarcho (lluvia.js), detrás de todo y nunca sobre sus fotos.
+     24/10: sección 04 de cuidados (#cuidados) con el texto que pasó el owner; Mallorca y Preguntas pasan a 05 y 06. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
@@ -136,7 +137,7 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .num::after{content:"";height:1px;width:48px;background:var(--line2)}
   .h2{font:300 clamp(42px,5.6vw,86px)/.98 var(--d);letter-spacing:-.015em;overflow-wrap:break-word}
   .h2 .cromo:last-child{font-style:italic}
-  .mll .h2,.cita .h2{font-size:clamp(40px,4.4vw,68px)}
+  .mll .h2,.cita .h2,.cuid .h2{font-size:clamp(40px,4.4vw,68px)}
   .lead{color:var(--ink2);max-width:46ch;margin-top:22px;font-size:clamp(17px,1.3vw,19.5px)}
   .panel{background:var(--panel);border:1px solid var(--line)}
   .etq{font:500 11px/1 var(--b);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
@@ -183,7 +184,21 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .paso p{color:var(--ink2);font-size:16.5px}
   @media(max-width:1000px){.pasos{grid-template-columns:repeat(2,minmax(0,1fr))}.paso:nth-child(3){padding-left:0;border-left:0}}
 
-  /* 04 · mallorca */
+  /* 04 · cuidados: una línea de tiempo, de la salida del estudio a la cicatrización (verano va con el punto hueco) */
+  .cuid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,5vw,90px);align-items:start}
+  .cuid-cab{position:sticky;top:120px}
+  .linea{list-style:none}
+  .linea li{position:relative;padding:0 0 clamp(34px,3.6vw,48px) 40px}
+  .linea li::before{content:"";position:absolute;left:0;top:5px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+  .linea li::after{content:"";position:absolute;left:4px;top:22px;bottom:-3px;width:1px;background:var(--line2)}
+  .linea li:last-child{padding-bottom:0}
+  .linea li:last-child::after{display:none}
+  .linea li.aparte::before{background:none;border:1px solid var(--ink)}
+  .cuando{color:var(--ink2);margin-bottom:12px}
+  .linea h3{font:400 27px/1.1 var(--d);margin-bottom:10px}
+  .linea li>p:last-child{color:var(--ink2);font-size:16.5px;max-width:52ch}
+
+  /* 05 · mallorca */
   .mll{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,90px);align-items:start}
   .tablero{margin-top:40px;border-top:1px solid var(--line2)}
   .fila{display:grid;grid-template-columns:64px 26px minmax(0,1fr) auto;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
@@ -202,7 +217,7 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .tip h3{font:400 25px/1.15 var(--d);margin-bottom:10px}
   .tip p{color:var(--ink2);font-size:16.5px;margin-bottom:14px}
 
-  /* 05 · preguntas (el formulario vive en el hero) */
+  /* 06 · preguntas (el formulario vive en el hero) */
   .cita{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,5vw,90px);align-items:start}
   .pq-cta{margin-top:36px}
   .faq{border-top:1px solid var(--line)}
@@ -287,7 +302,8 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   .lb-prev{left:12px}.lb-next{right:12px}
 
   @media(max-width:860px){
-    .hero-in,.est,.mll,.cita{grid-template-columns:minmax(0,1fr)}
+    .hero-in,.est,.mll,.cita,.cuid{grid-template-columns:minmax(0,1fr)}
+    .cuid-cab{position:static}
     .mosaico{display:flex;height:auto;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--gut)*-1);padding:0 var(--gut) 4px;scrollbar-width:none}
     .mosaico::-webkit-scrollbar{display:none}
     .m{flex:0 0 66%;aspect-ratio:3/4;scroll-snap-align:center}
@@ -324,6 +340,7 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
     <a href="#trabajos" data-i18n="nav.trabajos">Trabajos</a>
     <a href="#estudio" data-i18n="nav.estudio">Estudio</a>
     <a href="#mallorca">Mallorca</a>
+    <a href="#cuidados" data-i18n="nav.cuidados">Cuidados</a>
   </nav>
   <div class="top-der">
     <button class="lang estrellas" id="b-lluvia" type="button" aria-pressed="false" data-i18n-aria="ll.aria" aria-label="Lluvia de estrellas">✦</button>
@@ -494,10 +511,29 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
   </div>
 </section>
 
+<!-- 24/10: los cuidados que pasó Aaròn, con ancla propia para mandar el link después de la sesión (dobleaa.ink/#cuidados) -->
+<section class="sec" id="cuidados" data-fase="1.3" data-velo="0.5">
+  <div class="wrap cuid">
+    <div class="cuid-cab">
+      <p class="num mono" data-i18n="cu.num">04 — Cuidados</p>
+      <h2 class="h2 cl" data-i18n="cu.h">Para que<br>cure bien</h2>
+      <p class="lead" data-i18n="cu.p">Los cuidados de Aaròn, desde que sales del estudio hasta que el tatuaje cicatriza por completo.</p>
+    </div>
+    <ol class="linea">
+      <li class="rv"><p class="cuando mono" data-i18n="cu.1c">Las primeras 3 horas</p><h3 data-i18n="cu.1t">Tapado con film</h3><p data-i18n="cu.1p">Mantén el tatuaje cubierto con el film durante tres horas.</p></li>
+      <li class="rv"><p class="cuando mono" data-i18n="cu.2c">Al quitar el film</p><h3 data-i18n="cu.2t">La primera limpieza</h3><p data-i18n="cu.2p">Retira el film, lávalo con agua fría y jabón neutro (de pH neutro) y sécalo a palmadas con una servilleta o papel descartable.</p></li>
+      <li class="rv"><p class="cuando mono" data-i18n="cu.3c">Mañana y noche</p><h3 data-i18n="cu.3t">Que respire</h3><p data-i18n="cu.3p">Desde ahí, déjalo respirar y lávalo dos veces al día, por la mañana y por la noche, de la misma manera.</p></li>
+      <li class="rv"><p class="cuando mono" data-i18n="cu.4c">Desde el tercer día</p><h3 data-i18n="cu.4t">Muy poca crema</h3><p data-i18n="cu.4p">Una vez al día, después de lavarlo, ponte crema: una capa fina, transparente, muy poca.</p></li>
+      <li class="rv"><p class="cuando mono" data-i18n="cu.5c">Hasta que cicatrice</p><h3 data-i18n="cu.5t">Sin rascar, lejos del sol</h3><p data-i18n="cu.5p">No te rasques, cuídalo del sol y mantenlo hidratado una vez al día. Sigue lavándolo así hasta que termine la cicatrización.</p></li>
+      <li class="rv aparte"><p class="cuando mono" data-i18n="cu.6c">En verano</p><h3 data-i18n="cu.6t">Ni piscina ni mar</h3><p data-i18n="cu.6p">Evita la piscina, el agua de mar y el deporte hasta que el tatuaje termine de cicatrizar por completo.</p></li>
+    </ol>
+  </div>
+</section>
+
 <section class="sec" id="mallorca" data-fase="1.45" data-velo="0.3">
   <div class="wrap mll">
     <div>
-      <p class="num mono">04 — Mallorca</p>
+      <p class="num mono">05 — Mallorca</p>
       <h2 class="h2 cl" data-i18n="ml.h">De Argentina<br>al Mediterráneo</h2>
       <p class="lead" data-i18n="ml.p"></p>
       <div class="tablero" id="tablero" role="list">
@@ -522,7 +558,7 @@ document.documentElement.classList.toggle('muestra',['demos.hg-vl.com','0800webs
 <section class="sec" id="preguntas" data-fase="1.7" data-velo="0.66">
   <div class="wrap cita">
     <div>
-      <p class="num mono" data-i18n="pq.num">05 — Preguntas</p>
+      <p class="num mono" data-i18n="pq.num">06 — Preguntas</p>
       <h2 class="h2 cl" data-i18n="pq.h">Antes de<br>escribirle</h2>
       <a class="btn btn-acid pq-cta" href="#cita" data-i18n="pq.cta">Pedir cita ↑</a>
     </div>
@@ -610,7 +646,7 @@ const FILTROS=['todo','sacro','mito','retrato','animales','mangas','fine'];
 
 const T={
 es:{
- 'nav.trabajos':'Trabajos','nav.estudio':'Estudio','nav.cita':'Pedir cita','lang.aria':'Switch to English',
+ 'nav.trabajos':'Trabajos','nav.estudio':'Estudio','nav.cuidados':'Cuidados','nav.cita':'Pedir cita','lang.aria':'Switch to English',
  'h1':'Doble AA Tattoo — Aaròn Manrique, tatuador de realismo en Mallorca',
  'hero.sticker':'Citas disponibles','hero.kicker':'Tatuador · de 🇦🇷 a 🇪🇸',
  'hero.tag':'Aaròn<br>Manrique','hero.p':'Arte sacro, mitología, retratos y animales. Piezas grandes, hechas sin prisa, en Mallorca.',
@@ -627,12 +663,19 @@ es:{
  'pr.2t':'El diseño','pr.2p':'Se arma a partir de tus referencias, pensado para la zona que elegiste.',
  'pr.3t':'Las sesiones','pr.3p':'Las piezas grandes de realismo suelen llevar varias sesiones. El presupuesto te lo pasa por mensaje.',
  'pr.4t':'El curado','pr.4p':'Te pasa los cuidados para que cure bien. Así quedan curados: destacada «Curado» en su Instagram.',
+ 'cu.num':'04 — Cuidados','cu.h':'Para que<br>cure bien','cu.p':'Los cuidados de Aaròn, desde que sales del estudio hasta que el tatuaje cicatriza por completo.',
+ 'cu.1c':'Las primeras 3 horas','cu.1t':'Tapado con film','cu.1p':'Mantén el tatuaje cubierto con el film durante tres horas.',
+ 'cu.2c':'Al quitar el film','cu.2t':'La primera limpieza','cu.2p':'Retira el film, lávalo con agua fría y jabón neutro (de pH neutro) y sécalo a palmadas con una servilleta o papel descartable.',
+ 'cu.3c':'Mañana y noche','cu.3t':'Que respire','cu.3p':'Desde ahí, déjalo respirar y lávalo dos veces al día, por la mañana y por la noche, de la misma manera.',
+ 'cu.4c':'Desde el tercer día','cu.4t':'Muy poca crema','cu.4p':'Una vez al día, después de lavarlo, ponte crema: una capa fina, transparente, muy poca.',
+ 'cu.5c':'Hasta que cicatrice','cu.5t':'Sin rascar, lejos del sol','cu.5p':'No te rasques, cuídalo del sol y mantenlo hidratado una vez al día. Sigue lavándolo así hasta que termine la cicatrización.',
+ 'cu.6c':'En verano','cu.6t':'Ni piscina ni mar','cu.6p':'Evita la piscina, el agua de mar y el deporte hasta que el tatuaje termine de cicatrizar por completo.',
  'ml.h':'De Argentina<br>al Mediterráneo','ml.p':'Aaròn vive y tatúa en Mallorca. Sus historias destacadas pasan por Madrid, Londres, Francia, Egipto y Argentina.',
  'ml.origen':'Origen','ml.dest':'Destacada','ml.base':'Base','ml.lon':'Londres','ml.fra':'Francia','ml.egy':'Egipto','ml.foto':'De su Instagram',
  'ml.t1':'¿Vienes de vacaciones?','ml.t1p':'Escribe antes de llegar para guardar fecha. Un consejo: mientras cura conviene evitar el sol fuerte, el mar y la piscina, así que mejor tatuarse al final del viaje.','ml.t1a':'Avisar mis fechas →',
  'ml.t2':'¿Estás en otra ciudad?','ml.t2p':'Déjale tu ciudad en el mensaje y te avisa si pasa por allí.','ml.t2a':'Dejar mi ciudad →',
  'ci.h':'Pide tu <em>cita</em>','ci.p':'Te contesta por WhatsApp. Cuéntale tu idea y, si tienes, súmale una foto.','ci.masdatos':'Más detalles (opcional)',
- 'pq.num':'05 — Preguntas','pq.h':'Antes de<br>escribirle','pq.cta':'Pedir cita ↑','ll.aria':'Lluvia de estrellas',
+ 'pq.num':'06 — Preguntas','pq.h':'Antes de<br>escribirle','pq.cta':'Pedir cita ↑','ll.aria':'Lluvia de estrellas',
  'faq.1q':'¿Cuánto cuesta?','faq.1a':'Depende del tamaño, la zona y las horas. Escríbele con tu idea y te pasa presupuesto.',
  'faq.2q':'¿Cuánto tarda una pieza grande?','faq.2a':'Un brazo o un pecho de realismo suele hacerse en varias sesiones. Lo hablan al armar el diseño.',
  'faq.3q':'¿Y si estoy de vacaciones?','faq.3a':'Se puede. Escribe con tiempo y, si puedes, deja el tatuaje para el final del viaje: mientras cura, nada de sol fuerte, mar ni piscina.',
@@ -663,7 +706,7 @@ es:{
  'm.mail':'Mail','m.foto':'Foto del diseño: {u}','m.fotoprev':'Foto del diseño: va adjunta','m.fotoadj':'Te paso la foto del diseño por aquí.'
 },
 en:{
- 'nav.trabajos':'Work','nav.estudio':'Studio','nav.cita':'Book now','lang.aria':'Cambiar a español',
+ 'nav.trabajos':'Work','nav.estudio':'Studio','nav.cuidados':'Aftercare','nav.cita':'Book now','lang.aria':'Cambiar a español',
  'h1':'Doble AA Tattoo — Aaròn Manrique, realism tattoo artist in Mallorca',
  'hero.sticker':'Booking open','hero.kicker':'Tattoo artist · from 🇦🇷 to 🇪🇸',
  'hero.tag':'Aaròn<br>Manrique','hero.p':'Sacred art, mythology, portraits and animals. Big pieces, made without rushing, in Mallorca.',
@@ -680,12 +723,19 @@ en:{
  'pr.2t':'The design','pr.2p':'It’s built from your references, made for the spot you chose.',
  'pr.3t':'The sessions','pr.3p':'Large realism pieces usually take several sessions. He sends the quote by message.',
  'pr.4t':'Healing','pr.4p':'He gives you aftercare so it heals right. See healed work in the «Curado» highlight on his Instagram.',
+ 'cu.num':'04 — Aftercare','cu.h':'So it<br>heals right','cu.p':'Aaròn’s aftercare, from the moment you leave the studio until the tattoo is fully healed.',
+ 'cu.1c':'First 3 hours','cu.1t':'Under the film','cu.1p':'Keep the tattoo covered with the film for three hours.',
+ 'cu.2c':'When the film comes off','cu.2t':'The first wash','cu.2p':'Take the film off, wash it with cold water and a mild, pH-neutral soap, and pat it dry with a napkin or disposable paper towel.',
+ 'cu.3c':'Morning and night','cu.3t':'Let it breathe','cu.3p':'From then on, let it breathe and wash it twice a day, morning and night, the same way.',
+ 'cu.4c':'From day three','cu.4t':'Very little cream','cu.4p':'Once a day, after washing it, apply cream: a thin, see-through layer, very little.',
+ 'cu.5c':'Until it heals','cu.5t':'No scratching, no sun','cu.5p':'Don’t scratch it, keep it out of the sun and moisturise it once a day. Keep washing it this way until it has fully healed.',
+ 'cu.6c':'In summer','cu.6t':'No pool, no sea','cu.6p':'Avoid pools, sea water and sport until the tattoo has completely healed.',
  'ml.h':'From Argentina<br>to the Med','ml.p':'Aaròn lives and tattoos in Mallorca. His story highlights go through Madrid, London, France, Egypt and Argentina.',
  'ml.origen':'Origin','ml.dest':'Highlight','ml.base':'Home','ml.lon':'London','ml.fra':'France','ml.egy':'Egypt','ml.foto':'From his Instagram',
  'ml.t1':'Visiting on holiday?','ml.t1p':'Message before you arrive to hold a date. Tip: while it heals you should avoid strong sun, the sea and pools, so it’s best to get tattooed at the end of your trip.','ml.t1a':'Send my dates →',
  'ml.t2':'In another city?','ml.t2p':'Leave your city in the message and he’ll let you know if he comes by.','ml.t2a':'Leave my city →',
  'ci.h':'Book your <em>session</em>','ci.p':'He replies on WhatsApp. Tell him your idea and add a photo if you have one.','ci.masdatos':'More details (optional)',
- 'pq.num':'05 — Questions','pq.h':'Before<br>you write','pq.cta':'Book a session ↑','ll.aria':'Star shower',
+ 'pq.num':'06 — Questions','pq.h':'Before<br>you write','pq.cta':'Book a session ↑','ll.aria':'Star shower',
  'faq.1q':'How much is it?','faq.1a':'It depends on size, placement and hours. Send him your idea and he’ll quote you.',
  'faq.2q':'How long does a big piece take?','faq.2a':'A realism sleeve or chest piece usually takes several sessions. You’ll plan it together with the design.',
  'faq.3q':'What if I’m on holiday?','faq.3a':'Sure. Message ahead and, if you can, leave the tattoo for the end of your trip: while it heals, no strong sun, sea or pool.',
